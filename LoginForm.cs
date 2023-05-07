@@ -61,10 +61,12 @@ namespace NaturalFitnessApp
         {
             if (checkBox_ViewPass.Checked)
             {
+                // show password
                 txtPassword.PasswordChar = '\0';
             }
             else
             {
+                // hide password
                 txtPassword.PasswordChar = '*';
             }
         }
