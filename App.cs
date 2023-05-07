@@ -16,5 +16,10 @@ namespace NaturalFitnessApp
         {
             InitializeComponent();
         }
+
+        private void btnCafeteria_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

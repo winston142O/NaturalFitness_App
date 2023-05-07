@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NFlogo = new System.Windows.Forms.Panel();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -36,16 +35,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.checkBox_ViewPass = new System.Windows.Forms.CheckBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.NFlogo = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // NFlogo
-            // 
-            this.NFlogo.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.NaturalFitness;
-            this.NFlogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.NFlogo.Location = new System.Drawing.Point(97, 27);
-            this.NFlogo.Name = "NFlogo";
-            this.NFlogo.Size = new System.Drawing.Size(192, 175);
-            this.NFlogo.TabIndex = 0;
             // 
             // txtUsername
             // 
@@ -53,7 +44,7 @@
             this.txtUsername.Location = new System.Drawing.Point(51, 276);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(281, 24);
-            this.txtUsername.TabIndex = 1;
+            this.txtUsername.TabIndex = 0;
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
@@ -66,7 +57,7 @@
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(134, 32);
             this.lblUsuario.TabIndex = 2;
-            this.lblUsuario.Text = "Usuario";
+            this.lblUsuario.Text = "Usuario:";
             // 
             // lblPassword
             // 
@@ -77,7 +68,7 @@
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(177, 32);
             this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "Contraseña";
+            this.lblPassword.Text = "Contraseña:";
             // 
             // txtPassword
             // 
@@ -100,7 +91,7 @@
             this.btnLogin.Location = new System.Drawing.Point(97, 456);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(192, 47);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -115,7 +106,7 @@
             this.checkBox_ViewPass.Location = new System.Drawing.Point(172, 401);
             this.checkBox_ViewPass.Name = "checkBox_ViewPass";
             this.checkBox_ViewPass.Size = new System.Drawing.Size(160, 24);
-            this.checkBox_ViewPass.TabIndex = 4;
+            this.checkBox_ViewPass.TabIndex = 3;
             this.checkBox_ViewPass.Text = "Mostrar Contraseña";
             this.checkBox_ViewPass.UseVisualStyleBackColor = true;
             this.checkBox_ViewPass.CheckedChanged += new System.EventHandler(this.checkBox_ViewPass_CheckedChanged);
@@ -134,6 +125,15 @@
             this.btnExit.Text = "Salir";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // NFlogo
+            // 
+            this.NFlogo.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.NaturalFitness;
+            this.NFlogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.NFlogo.Location = new System.Drawing.Point(97, 27);
+            this.NFlogo.Name = "NFlogo";
+            this.NFlogo.Size = new System.Drawing.Size(192, 175);
+            this.NFlogo.TabIndex = 0;
             // 
             // LoginForm
             // 

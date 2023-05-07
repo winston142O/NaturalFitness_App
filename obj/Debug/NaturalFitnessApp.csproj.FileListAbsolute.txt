@@ -9,3 +9,4 @@ D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.csproj.Gener
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.csproj.CoreCompileInputs.cache
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.exe
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.pdb
+D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.App.resources

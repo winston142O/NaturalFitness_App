@@ -60,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="App.resx">
+      <DependentUpon>App.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +91,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NaturalFitness.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\side_shadow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAFETERIA_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CFW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
