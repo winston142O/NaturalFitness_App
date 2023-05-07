@@ -12,24 +12,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace NaturalFitnessApp
 {
     public partial class LoginForm : Form
-    {       
+    {
+        // user and password definition
+        private string userName = "admin";
+        private string passWord = "admin1234";
+
         public LoginForm()
         {
             InitializeComponent();
-        }
+        }             
 
-        private void txtUsername_Enter(object sender, EventArgs e)
-        {
-            txtUsername.BackColor = Color.FromArgb(241, 219, 73);
-            this.Refresh();
-        }
-
-        private void txtUsername_Leave(object sender, EventArgs e)
-        {
-            txtUsername.BackColor = Color.White;
-            this.Refresh();
-        }
-
+        // exit
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult exit = MessageBox.Show("¿Desea Salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -43,10 +36,11 @@ namespace NaturalFitnessApp
             }
         }
 
+        // login and load app
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // verificar credenciales
-            if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+            if (txtUsername.Text == userName && txtPassword.Text == passWord)
             {
                 new App().Show();
                 this.Hide();
@@ -57,6 +51,7 @@ namespace NaturalFitnessApp
             }
         }
 
+        // show password method
         private void checkBox_ViewPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_ViewPass.Checked)
@@ -71,6 +66,20 @@ namespace NaturalFitnessApp
             }
         }
 
+        // change username field color on focus
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            txtUsername.BackColor = Color.FromArgb(241, 219, 73);
+            this.Refresh();
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            txtUsername.BackColor = Color.White;
+            this.Refresh();
+        }
+
+        // change password field color on focus
         private void txtPassword_Enter(object sender, EventArgs e)
         {
             txtPassword.BackColor = Color.FromArgb(241, 219, 73);
