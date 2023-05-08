@@ -114,6 +114,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -137,9 +138,11 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(392, 587);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.checkBox_ViewPass);
