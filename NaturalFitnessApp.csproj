@@ -101,5 +101,14 @@
   <ItemGroup>
     <None Include="Resources\CFW.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finance_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
