@@ -46,5 +46,44 @@ namespace NaturalFitnessApp
             userCreation.btnUpdate.Enabled = false;
             userCreation.ShowDialog();
         }
+
+        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvUsers.Columns[e.ColumnIndex].Name;
+            if (colName == "colEdit")
+            {
+                UserCreationForm userCreation = new UserCreationForm();
+                if (dgvUsers.Rows[e.RowIndex].Cells[1].Value != null)
+                {
+                    userCreation.txtNombres.Text = dgvUsers.Rows[e.RowIndex].Cells[1].Value.ToString();
+                }
+                if (dgvUsers.Rows[e.RowIndex].Cells[2].Value != null)
+                {
+                    userCreation.txtApellidos.Text = dgvUsers.Rows[e.RowIndex].Cells[2].Value.ToString();
+                }
+                if (dgvUsers.Rows[e.RowIndex].Cells[3].Value != null)
+                {
+                    userCreation.txtDireccion.Text = dgvUsers.Rows[e.RowIndex].Cells[3].Value.ToString();
+                }
+                if (dgvUsers.Rows[e.RowIndex].Cells[4].Value != null)
+                {
+                    userCreation.txtTelefono.Text = dgvUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
+                }
+                DateTime fechaIngreso;
+                if (DateTime.TryParse(dgvUsers.Rows[e.RowIndex].Cells[5].Value.ToString(), out fechaIngreso))
+                {
+                    userCreation.dtpFechaIngreso.Value = fechaIngreso;
+                }
+                userCreation.btnAceptar.Enabled = false;
+                userCreation.btnUpdate.Enabled = true;
+                userCreation.btnCancel.Enabled = true;
+
+                userCreation.ShowDialog();
+            }
+            else if (colName == "colDelete")
+            {
+
+            }
+        }
     }
 }

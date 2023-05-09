@@ -242,14 +242,14 @@
         private System.Windows.Forms.Label lblNombres;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelTopBar;
-        private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.TextBox txtTelefono;
         public System.Windows.Forms.Button btnAceptar;
         public System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.TextBox txtNombres;
+        public System.Windows.Forms.TextBox txtApellidos;
+        public System.Windows.Forms.TextBox txtDireccion;
+        public System.Windows.Forms.DateTimePicker dtpFechaIngreso;
+        public System.Windows.Forms.TextBox txtTelefono;
     }
 }
