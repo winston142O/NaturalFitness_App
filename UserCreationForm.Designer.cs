@@ -246,10 +246,10 @@
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.Button btnCancel;
+        public System.Windows.Forms.Button btnUpdate;
     }
 }

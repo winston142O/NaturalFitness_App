@@ -38,5 +38,13 @@ namespace NaturalFitnessApp
             dr.Close();
             con.Close();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            UserCreationForm userCreation = new UserCreationForm();
+            userCreation.btnAceptar.Enabled = true;
+            userCreation.btnUpdate.Enabled = false;
+            userCreation.ShowDialog();
+        }
     }
 }

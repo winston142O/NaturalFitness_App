@@ -140,6 +140,7 @@
             this.Controls.Add(this.panelTopBar);
             this.Name = "App";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Natural Fitness Manager";
             this.panelTopBar.ResumeLayout(false);
             this.ResumeLayout(false);
