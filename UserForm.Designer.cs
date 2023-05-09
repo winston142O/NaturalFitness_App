@@ -30,26 +30,26 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBottomBar = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panelLogoUsers = new System.Windows.Forms.Panel();
+            this.lblManageUsers = new System.Windows.Forms.Label();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblManageUsers = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panelLogoUsers = new System.Windows.Forms.Panel();
             this.panelBottomBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBottomBar
             // 
-            this.panelBottomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
+            this.panelBottomBar.BackColor = System.Drawing.Color.Gold;
             this.panelBottomBar.Controls.Add(this.button1);
             this.panelBottomBar.Controls.Add(this.panelLogoUsers);
             this.panelBottomBar.Controls.Add(this.lblManageUsers);
@@ -60,13 +60,45 @@
             this.panelBottomBar.Size = new System.Drawing.Size(1366, 67);
             this.panelBottomBar.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::NaturalFitnessApp.Properties.Resources.add;
+            this.button1.Location = new System.Drawing.Point(1308, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 67);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panelLogoUsers
+            // 
+            this.panelLogoUsers.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.group;
+            this.panelLogoUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLogoUsers.Location = new System.Drawing.Point(335, 9);
+            this.panelLogoUsers.Name = "panelLogoUsers";
+            this.panelLogoUsers.Size = new System.Drawing.Size(55, 46);
+            this.panelLogoUsers.TabIndex = 2;
+            // 
+            // lblManageUsers
+            // 
+            this.lblManageUsers.AutoSize = true;
+            this.lblManageUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageUsers.Location = new System.Drawing.Point(12, 17);
+            this.lblManageUsers.Name = "lblManageUsers";
+            this.lblManageUsers.Size = new System.Drawing.Size(297, 32);
+            this.lblManageUsers.TabIndex = 1;
+            this.lblManageUsers.Text = "Administrar Usuarios";
+            // 
             // dgvUsers
             // 
+            this.dgvUsers.AllowUserToAddRows = false;
             this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
             this.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gold;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -91,6 +123,24 @@
             this.dgvUsers.RowTemplate.Height = 24;
             this.dgvUsers.Size = new System.Drawing.Size(1366, 701);
             this.dgvUsers.TabIndex = 0;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::NaturalFitnessApp.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::NaturalFitnessApp.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 125;
             // 
             // ColNum
             // 
@@ -130,70 +180,25 @@
             this.ColPhone.Name = "ColPhone";
             this.ColPhone.Width = 108;
             // 
-            // lblManageUsers
-            // 
-            this.lblManageUsers.AutoSize = true;
-            this.lblManageUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageUsers.Location = new System.Drawing.Point(12, 17);
-            this.lblManageUsers.Name = "lblManageUsers";
-            this.lblManageUsers.Size = new System.Drawing.Size(297, 32);
-            this.lblManageUsers.TabIndex = 1;
-            this.lblManageUsers.Text = "Administrar Usuarios";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::NaturalFitnessApp.Properties.Resources.edit;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 24;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::NaturalFitnessApp.Properties.Resources.delete;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 24;
-            // 
             // ColEdit
             // 
             this.ColEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColEdit.HeaderText = "";
             this.ColEdit.Image = global::NaturalFitnessApp.Properties.Resources.edit;
+            this.ColEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.ColEdit.MinimumWidth = 6;
             this.ColEdit.Name = "ColEdit";
-            this.ColEdit.Width = 24;
+            this.ColEdit.Width = 6;
             // 
             // ColDelete
             // 
             this.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColDelete.HeaderText = "";
             this.ColDelete.Image = global::NaturalFitnessApp.Properties.Resources.delete;
+            this.ColDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.ColDelete.MinimumWidth = 6;
             this.ColDelete.Name = "ColDelete";
-            this.ColDelete.Width = 24;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::NaturalFitnessApp.Properties.Resources.add;
-            this.button1.Location = new System.Drawing.Point(1294, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 41);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panelLogoUsers
-            // 
-            this.panelLogoUsers.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.group;
-            this.panelLogoUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelLogoUsers.Location = new System.Drawing.Point(315, 9);
-            this.panelLogoUsers.Name = "panelLogoUsers";
-            this.panelLogoUsers.Size = new System.Drawing.Size(55, 46);
-            this.panelLogoUsers.TabIndex = 2;
+            this.ColDelete.Width = 6;
             // 
             // UserForm
             // 
@@ -217,6 +222,10 @@
         private System.Windows.Forms.Panel panelBottomBar;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.Label lblManageUsers;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelLogoUsers;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColApellidos;
@@ -224,9 +233,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPhone;
         private System.Windows.Forms.DataGridViewImageColumn ColEdit;
         private System.Windows.Forms.DataGridViewImageColumn ColDelete;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panelLogoUsers;
     }
 }

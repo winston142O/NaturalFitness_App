@@ -21,5 +21,29 @@ namespace NaturalFitnessApp
         {
 
         }
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            // if there already is a childform open
+            if (activeForm != null)
+            {
+                // close it
+                activeForm.Close();
+            }
+            // change active form
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void btnMembers_Click(object sender, EventArgs e)
+        {
+            openChildForm(new UserForm());
+        }
     }
 }
