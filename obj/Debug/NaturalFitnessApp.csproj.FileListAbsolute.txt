@@ -10,3 +10,5 @@ D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.csproj.CoreC
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.exe
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.pdb
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.App.resources
+D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.UserCreationForm.resources
+D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.UserForm.resources

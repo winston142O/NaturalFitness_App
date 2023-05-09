@@ -41,6 +41,8 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.panelTopBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             this.lblFechaIngreso.AutoSize = true;
             this.lblFechaIngreso.BackColor = System.Drawing.Color.Transparent;
             this.lblFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaIngreso.Location = new System.Drawing.Point(12, 226);
+            this.lblFechaIngreso.Location = new System.Drawing.Point(12, 287);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
             this.lblFechaIngreso.Size = new System.Drawing.Size(170, 25);
             this.lblFechaIngreso.TabIndex = 0;
@@ -90,11 +92,11 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(56, 10);
+            this.lblTitle.Location = new System.Drawing.Point(34, 10);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(429, 32);
+            this.lblTitle.Size = new System.Drawing.Size(465, 32);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Crear/Añadir un nuevo usuario";
+            this.lblTitle.Text = "Crear/Modificar un nuevo usuario";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelTopBar
@@ -125,7 +127,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(117, 179);
+            this.txtDireccion.Location = new System.Drawing.Point(115, 176);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(395, 30);
             this.txtDireccion.TabIndex = 2;
@@ -133,10 +135,10 @@
             // dtpFechaIngreso
             // 
             this.dtpFechaIngreso.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(188, 229);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(188, 290);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(323, 22);
-            this.dtpFechaIngreso.TabIndex = 3;
+            this.dtpFechaIngreso.TabIndex = 4;
             // 
             // btnAceptar
             // 
@@ -145,13 +147,14 @@
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(17, 284);
+            this.btnAceptar.Location = new System.Drawing.Point(15, 332);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(148, 53);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancel
             // 
@@ -160,13 +163,14 @@
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(378, 284);
+            this.btnCancel.Location = new System.Drawing.Point(376, 332);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(148, 53);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
@@ -175,28 +179,48 @@
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(197, 284);
+            this.btnUpdate.Location = new System.Drawing.Point(195, 332);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(148, 53);
-            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(12, 234);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(95, 25);
+            this.lblTelefono.TabIndex = 0;
+            this.lblTelefono.Text = "Teléfono:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(115, 231);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(395, 30);
+            this.txtTelefono.TabIndex = 3;
             // 
             // UserCreationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 359);
+            this.ClientSize = new System.Drawing.Size(538, 405);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dtpFechaIngreso);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.lblFechaIngreso);
             this.Controls.Add(this.panelTopBar);
+            this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.lblNombres);
@@ -225,5 +249,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.TextBox txtTelefono;
     }
 }
