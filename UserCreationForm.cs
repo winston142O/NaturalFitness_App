@@ -67,5 +67,29 @@ namespace NaturalFitnessApp
             txtTelefono.Clear();
             dtpFechaIngreso.ResetText();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("¿Estás seguro de que quieres actualizar los datos de este usuario?", "Confirmación (Actualizar Usuario)", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    com = new SqlCommand("UPDATE tbUsers SET apellidos=@apellidos, direccion=@direccion, telefono=@telefono, fechaIngreso=@fechaIngreso WHERE nombres LIKE '"+txtNombres.Text+"' ", con);
+                    com.Parameters.AddWithValue("@apellidos", txtApellidos.Text);
+                    com.Parameters.AddWithValue("@direccion", txtDireccion.Text);
+                    com.Parameters.AddWithValue("@telefono", txtTelefono.Text);
+                    com.Parameters.AddWithValue("@fechaIngreso", dtpFechaIngreso.Value);
+                    con.Open();
+                    com.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Usuario actualizado exitosamente.");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

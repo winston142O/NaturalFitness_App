@@ -50,7 +50,7 @@ namespace NaturalFitnessApp
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvUsers.Columns[e.ColumnIndex].Name;
-            if (colName == "colEdit")
+            if (colName == "ColEdit")
             {
                 UserCreationForm userCreation = new UserCreationForm();
                 if (dgvUsers.Rows[e.RowIndex].Cells[1].Value != null)
@@ -76,14 +76,22 @@ namespace NaturalFitnessApp
                 }
                 userCreation.btnAceptar.Enabled = false;
                 userCreation.btnUpdate.Enabled = true;
-                userCreation.btnCancel.Enabled = true;
-
+                userCreation.txtNombres.Enabled = false;
+                userCreation.btnCancel.Enabled = true; 
                 userCreation.ShowDialog();
             }
-            else if (colName == "colDelete")
+            else if (colName == "ColDelete")
             {
-
+                if (MessageBox.Show("¿Estás seguro de que quieres eliminar este usuario?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                {
+                    con.Open();
+                    com = new SqlCommand("DELETE FROM tbUsers WHERE telefono LIKE '" + dgvUsers.Rows[e.RowIndex].Cells[4].Value.ToString() +"'", con);
+                    com.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Usuario eliminado...");
+                }
             }
+            loadUsers();
         }
     }
 }
