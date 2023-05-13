@@ -30,19 +30,19 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBottomBar = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.panelLogoUsers = new System.Windows.Forms.Panel();
             this.lblManageUsers = new System.Windows.Forms.Label();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.panelLogoUsers = new System.Windows.Forms.Panel();
             this.panelBottomBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
@@ -59,28 +59,6 @@
             this.panelBottomBar.Name = "panelBottomBar";
             this.panelBottomBar.Size = new System.Drawing.Size(1366, 67);
             this.panelBottomBar.TabIndex = 0;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = global::NaturalFitnessApp.Properties.Resources.add;
-            this.btnAdd.Location = new System.Drawing.Point(1308, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(58, 67);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // panelLogoUsers
-            // 
-            this.panelLogoUsers.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.group;
-            this.panelLogoUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelLogoUsers.Location = new System.Drawing.Point(335, 9);
-            this.panelLogoUsers.Name = "panelLogoUsers";
-            this.panelLogoUsers.Size = new System.Drawing.Size(55, 46);
-            this.panelLogoUsers.TabIndex = 2;
             // 
             // lblManageUsers
             // 
@@ -126,24 +104,6 @@
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::NaturalFitnessApp.Properties.Resources.edit;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 125;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::NaturalFitnessApp.Properties.Resources.delete;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 125;
-            // 
             // ColNum
             // 
             this.ColNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -182,6 +142,26 @@
             this.ColPhone.Name = "ColPhone";
             this.ColPhone.Width = 108;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::NaturalFitnessApp.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 6;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::NaturalFitnessApp.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 6;
+            // 
             // ColEdit
             // 
             this.ColEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -201,6 +181,28 @@
             this.ColDelete.MinimumWidth = 6;
             this.ColDelete.Name = "ColDelete";
             this.ColDelete.Width = 6;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::NaturalFitnessApp.Properties.Resources.add;
+            this.btnAdd.Location = new System.Drawing.Point(1308, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(58, 67);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // panelLogoUsers
+            // 
+            this.panelLogoUsers.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.group;
+            this.panelLogoUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLogoUsers.Location = new System.Drawing.Point(335, 9);
+            this.panelLogoUsers.Name = "panelLogoUsers";
+            this.panelLogoUsers.Size = new System.Drawing.Size(55, 46);
+            this.panelLogoUsers.TabIndex = 2;
             // 
             // UserForm
             // 

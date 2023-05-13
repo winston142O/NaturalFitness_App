@@ -45,6 +45,7 @@ namespace NaturalFitnessApp
             userCreation.btnAceptar.Enabled = true;
             userCreation.btnUpdate.Enabled = false;
             userCreation.ShowDialog();
+            loadUsers();
         }
 
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)

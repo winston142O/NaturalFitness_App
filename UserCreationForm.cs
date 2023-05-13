@@ -51,6 +51,7 @@ namespace NaturalFitnessApp
                     con.Close();
                     MessageBox.Show("Usuario guardado exitosamente.");
                     clearFields();
+                    this.Close();
                 }
             }
             catch (Exception ex)
