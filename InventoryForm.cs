@@ -80,7 +80,7 @@ namespace NaturalFitnessApp
                 if (MessageBox.Show("¿Estás seguro de que quieres eliminar este producto?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     con.Open();
-                    com = new SqlCommand("DELETE FROM tbProducts WHERE pid LIKE '" + dgvInv.Rows[e.RowIndex].Cells[4].Value.ToString() + "'", con);
+                    com = new SqlCommand("DELETE FROM tbProducts WHERE pid LIKE '" + dgvInv.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
                     com.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Producto eliminado...");
@@ -88,5 +88,31 @@ namespace NaturalFitnessApp
             }
             loadProducts();
         }
+
+        private void BuscarEnBD()
+        {
+            string searchTerm = txtSearch.Text;
+            string query = "SELECT * FROM tbProducts WHERE pname LIKE '%' + @searchTerm + '%'";
+            using (con)
+            {
+                SqlCommand command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@searchTerm", searchTerm);
+                con.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dgvInv.DataSource = table;
+                con.Close();
+            }
+        }
+        
+        // not working atm
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                //BuscarEnBD();
+            }
+        }        
     }
 }
