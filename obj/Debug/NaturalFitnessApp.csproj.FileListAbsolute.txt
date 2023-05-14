@@ -13,3 +13,4 @@ D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.App.resource
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.UserCreationForm.resources
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.UserForm.resources
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.InventoryForm.resources
+D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.AddProductForm.resources

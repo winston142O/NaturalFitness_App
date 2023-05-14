@@ -21,8 +21,7 @@ namespace NaturalFitnessApp
         {
             InitializeComponent();
             loadUsers();
-        }
-        
+        }        
         public void loadUsers()
         {
             int i = 0;
@@ -38,7 +37,6 @@ namespace NaturalFitnessApp
             dr.Close();
             con.Close();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             UserCreationForm userCreation = new UserCreationForm();
@@ -47,7 +45,6 @@ namespace NaturalFitnessApp
             userCreation.ShowDialog();
             loadUsers();
         }
-
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvUsers.Columns[e.ColumnIndex].Name;

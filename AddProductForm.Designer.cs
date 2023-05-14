@@ -32,10 +32,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.txtProdName = new System.Windows.Forms.TextBox();
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.lblProdDesc = new System.Windows.Forms.Label();
             this.lblProdPrice = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancel
             // 
@@ -85,6 +86,7 @@
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAceptar
             // 
@@ -100,38 +102,39 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // txtTelefono
+            // txtDesc
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(253, 244);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(395, 30);
-            this.txtTelefono.TabIndex = 17;
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(253, 244);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(395, 30);
+            this.txtDesc.TabIndex = 17;
             // 
-            // txtDireccion
+            // txtPrice
             // 
-            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(253, 189);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(395, 30);
-            this.txtDireccion.TabIndex = 16;
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(253, 189);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(395, 30);
+            this.txtPrice.TabIndex = 16;
             // 
-            // txtApellidos
+            // txtQty
             // 
-            this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidos.Location = new System.Drawing.Point(254, 141);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(395, 30);
-            this.txtApellidos.TabIndex = 14;
+            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty.Location = new System.Drawing.Point(254, 141);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(395, 30);
+            this.txtQty.TabIndex = 14;
             // 
-            // txtNombres
+            // txtProdName
             // 
-            this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombres.Location = new System.Drawing.Point(253, 87);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(395, 30);
-            this.txtNombres.TabIndex = 8;
+            this.txtProdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdName.Location = new System.Drawing.Point(253, 87);
+            this.txtProdName.Name = "txtProdName";
+            this.txtProdName.Size = new System.Drawing.Size(395, 30);
+            this.txtProdName.TabIndex = 8;
             // 
             // panelTopBar
             // 
@@ -192,10 +195,10 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.txtApellidos);
-            this.Controls.Add(this.txtNombres);
+            this.Controls.Add(this.txtDesc);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtQty);
+            this.Controls.Add(this.txtProdName);
             this.Controls.Add(this.panelTopBar);
             this.Controls.Add(this.lblProdDesc);
             this.Controls.Add(this.lblProdPrice);
@@ -218,10 +221,10 @@
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.Button btnAceptar;
-        public System.Windows.Forms.TextBox txtTelefono;
-        public System.Windows.Forms.TextBox txtDireccion;
-        public System.Windows.Forms.TextBox txtApellidos;
-        public System.Windows.Forms.TextBox txtNombres;
+        public System.Windows.Forms.TextBox txtDesc;
+        public System.Windows.Forms.TextBox txtPrice;
+        public System.Windows.Forms.TextBox txtQty;
+        public System.Windows.Forms.TextBox txtProdName;
         private System.Windows.Forms.Panel panelTopBar;
         private System.Windows.Forms.Label lblProdDesc;
         private System.Windows.Forms.Label lblProdPrice;
