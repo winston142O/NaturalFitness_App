@@ -17,9 +17,10 @@ namespace NaturalFitnessApp
             InitializeComponent();
         }
 
+        //inventory
         private void btnCafeteria_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new InventoryForm());
         }
 
         private Form activeForm = null;

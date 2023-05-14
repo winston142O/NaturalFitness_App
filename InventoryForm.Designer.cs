@@ -32,16 +32,16 @@
             this.panelBottomBar = new System.Windows.Forms.Panel();
             this.lblManageInv = new System.Windows.Forms.Label();
             this.dgvInv = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.panelLogoInv = new System.Windows.Forms.Panel();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProdCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProdPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.panelLogoInv = new System.Windows.Forms.Panel();
             this.ColEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelBottomBar.SuspendLayout();
@@ -50,7 +50,7 @@
             // 
             // panelBottomBar
             // 
-            this.panelBottomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
+            this.panelBottomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
             this.panelBottomBar.Controls.Add(this.btnAdd);
             this.panelBottomBar.Controls.Add(this.panelLogoInv);
             this.panelBottomBar.Controls.Add(this.lblManageInv);
@@ -64,7 +64,9 @@
             // lblManageInv
             // 
             this.lblManageInv.AutoSize = true;
+            this.lblManageInv.BackColor = System.Drawing.Color.Transparent;
             this.lblManageInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageInv.ForeColor = System.Drawing.Color.White;
             this.lblManageInv.Location = new System.Drawing.Point(12, 17);
             this.lblManageInv.Name = "lblManageInv";
             this.lblManageInv.Size = new System.Drawing.Size(312, 32);
@@ -78,9 +80,9 @@
             this.dgvInv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -93,7 +95,7 @@
             this.colProdName,
             this.ColProdCant,
             this.ColProdPrice,
-            this.ColPhone,
+            this.ColDesc,
             this.ColEdit,
             this.ColDelete});
             this.dgvInv.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -104,6 +106,53 @@
             this.dgvInv.RowTemplate.Height = 24;
             this.dgvInv.Size = new System.Drawing.Size(1366, 768);
             this.dgvInv.TabIndex = 2;
+            // 
+            // ColNum
+            // 
+            this.ColNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColNum.HeaderText = "No";
+            this.ColNum.MinimumWidth = 6;
+            this.ColNum.Name = "ColNum";
+            this.ColNum.Width = 68;
+            // 
+            // colProdID
+            // 
+            this.colProdID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colProdID.HeaderText = "ID";
+            this.colProdID.MinimumWidth = 6;
+            this.colProdID.Name = "colProdID";
+            this.colProdID.Width = 60;
+            // 
+            // colProdName
+            // 
+            this.colProdName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colProdName.HeaderText = "Nombre";
+            this.colProdName.MinimumWidth = 6;
+            this.colProdName.Name = "colProdName";
+            this.colProdName.Width = 123;
+            // 
+            // ColProdCant
+            // 
+            this.ColProdCant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColProdCant.HeaderText = "Cant.";
+            this.ColProdCant.MinimumWidth = 6;
+            this.ColProdCant.Name = "ColProdCant";
+            this.ColProdCant.Width = 91;
+            // 
+            // ColProdPrice
+            // 
+            this.ColProdPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColProdPrice.HeaderText = "Precio";
+            this.ColProdPrice.MinimumWidth = 6;
+            this.ColProdPrice.Name = "ColProdPrice";
+            this.ColProdPrice.Width = 104;
+            // 
+            // ColDesc
+            // 
+            this.ColDesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColDesc.HeaderText = "Descripción";
+            this.ColDesc.MinimumWidth = 6;
+            this.ColDesc.Name = "ColDesc";
             // 
             // dataGridViewImageColumn1
             // 
@@ -130,66 +179,22 @@
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = global::NaturalFitnessApp.Properties.Resources.add;
+            this.btnAdd.Image = global::NaturalFitnessApp.Properties.Resources.add_white;
             this.btnAdd.Location = new System.Drawing.Point(1308, 0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(58, 67);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelLogoInv
             // 
-            this.panelLogoInv.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.inventory;
+            this.panelLogoInv.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.inventory_white;
             this.panelLogoInv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelLogoInv.Location = new System.Drawing.Point(345, 9);
             this.panelLogoInv.Name = "panelLogoInv";
             this.panelLogoInv.Size = new System.Drawing.Size(55, 46);
             this.panelLogoInv.TabIndex = 2;
-            // 
-            // ColNum
-            // 
-            this.ColNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColNum.HeaderText = "No";
-            this.ColNum.MinimumWidth = 6;
-            this.ColNum.Name = "ColNum";
-            this.ColNum.Width = 59;
-            // 
-            // colProdID
-            // 
-            this.colProdID.HeaderText = "ID";
-            this.colProdID.MinimumWidth = 6;
-            this.colProdID.Name = "colProdID";
-            this.colProdID.Width = 125;
-            // 
-            // colProdName
-            // 
-            this.colProdName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProdName.HeaderText = "Nombre";
-            this.colProdName.MinimumWidth = 6;
-            this.colProdName.Name = "colProdName";
-            // 
-            // ColProdCant
-            // 
-            this.ColProdCant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColProdCant.HeaderText = "Cant.";
-            this.ColProdCant.MinimumWidth = 6;
-            this.ColProdCant.Name = "ColProdCant";
-            // 
-            // ColProdPrice
-            // 
-            this.ColProdPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColProdPrice.HeaderText = "Precio";
-            this.ColProdPrice.MinimumWidth = 6;
-            this.ColProdPrice.Name = "ColProdPrice";
-            this.ColProdPrice.Width = 90;
-            // 
-            // ColPhone
-            // 
-            this.ColPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColPhone.HeaderText = "Teléfono";
-            this.ColPhone.MinimumWidth = 6;
-            this.ColPhone.Name = "ColPhone";
-            this.ColPhone.Width = 108;
             // 
             // ColEdit
             // 
@@ -242,7 +247,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProdName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProdCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProdPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDesc;
         private System.Windows.Forms.DataGridViewImageColumn ColEdit;
         private System.Windows.Forms.DataGridViewImageColumn ColDelete;
     }

@@ -16,5 +16,13 @@ namespace NaturalFitnessApp
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddProductForm productCreation = new AddProductForm();
+            productCreation.btnAceptar.Enabled = true;
+            productCreation.btnUpdate.Enabled = true;
+            productCreation.ShowDialog();
+        }
     }
 }

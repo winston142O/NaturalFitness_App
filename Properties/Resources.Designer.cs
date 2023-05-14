@@ -83,6 +83,16 @@ namespace NaturalFitnessApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_white {
+            get {
+                object obj = ResourceManager.GetObject("add_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAFETERIA_white {
             get {
                 object obj = ResourceManager.GetObject("CAFETERIA_white", resourceCulture);
@@ -146,6 +156,16 @@ namespace NaturalFitnessApp.Properties {
         internal static System.Drawing.Bitmap group_white {
             get {
                 object obj = ResourceManager.GetObject("group_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap group_white1 {
+            get {
+                object obj = ResourceManager.GetObject("group_white1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -49,7 +49,7 @@
             // 
             // panelBottomBar
             // 
-            this.panelBottomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
+            this.panelBottomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
             this.panelBottomBar.Controls.Add(this.btnAdd);
             this.panelBottomBar.Controls.Add(this.panelLogoUsers);
             this.panelBottomBar.Controls.Add(this.lblManageUsers);
@@ -64,6 +64,7 @@
             // 
             this.lblManageUsers.AutoSize = true;
             this.lblManageUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageUsers.ForeColor = System.Drawing.Color.White;
             this.lblManageUsers.Location = new System.Drawing.Point(12, 17);
             this.lblManageUsers.Name = "lblManageUsers";
             this.lblManageUsers.Size = new System.Drawing.Size(297, 32);
@@ -77,9 +78,9 @@
             this.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(219)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -110,7 +111,7 @@
             this.ColNum.HeaderText = "No";
             this.ColNum.MinimumWidth = 6;
             this.ColNum.Name = "ColNum";
-            this.ColNum.Width = 59;
+            this.ColNum.Width = 68;
             // 
             // ColNombres
             // 
@@ -132,7 +133,7 @@
             this.ColAddress.HeaderText = "Dirección";
             this.ColAddress.MinimumWidth = 6;
             this.ColAddress.Name = "ColAddress";
-            this.ColAddress.Width = 117;
+            this.ColAddress.Width = 136;
             // 
             // ColPhone
             // 
@@ -140,7 +141,7 @@
             this.ColPhone.HeaderText = "Teléfono";
             this.ColPhone.MinimumWidth = 6;
             this.ColPhone.Name = "ColPhone";
-            this.ColPhone.Width = 108;
+            this.ColPhone.Width = 126;
             // 
             // dataGridViewImageColumn1
             // 
@@ -187,7 +188,7 @@
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = global::NaturalFitnessApp.Properties.Resources.add;
+            this.btnAdd.Image = global::NaturalFitnessApp.Properties.Resources.add_white;
             this.btnAdd.Location = new System.Drawing.Point(1308, 0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(58, 67);
@@ -197,7 +198,7 @@
             // 
             // panelLogoUsers
             // 
-            this.panelLogoUsers.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.group;
+            this.panelLogoUsers.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.group_white1;
             this.panelLogoUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelLogoUsers.Location = new System.Drawing.Point(335, 9);
             this.panelLogoUsers.Name = "panelLogoUsers";

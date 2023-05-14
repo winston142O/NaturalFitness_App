@@ -115,9 +115,9 @@
             // 
             this.panelBottomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
             this.panelBottomBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottomBar.Location = new System.Drawing.Point(0, 862);
+            this.panelBottomBar.Location = new System.Drawing.Point(0, 874);
             this.panelBottomBar.Name = "panelBottomBar";
-            this.panelBottomBar.Size = new System.Drawing.Size(1348, 22);
+            this.panelBottomBar.Size = new System.Drawing.Size(1348, 10);
             this.panelBottomBar.TabIndex = 1;
             // 
             // panelMain
@@ -126,7 +126,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 150);
             this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1348, 712);
+            this.panelMain.Size = new System.Drawing.Size(1348, 724);
             this.panelMain.TabIndex = 2;
             // 
             // App
