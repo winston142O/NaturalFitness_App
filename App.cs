@@ -17,12 +17,6 @@ namespace NaturalFitnessApp
             InitializeComponent();
         }
 
-        //inventory
-        private void btnCafeteria_Click(object sender, EventArgs e)
-        {
-            openChildForm(new InventoryForm());
-        }
-
         private Form activeForm = null;
         private void openChildForm(Form childForm)
         {
@@ -42,9 +36,19 @@ namespace NaturalFitnessApp
             childForm.Show();
         }
 
+        private void btnCafeteria_Click(object sender, EventArgs e)
+        {
+            openChildForm(new InventoryForm());
+        }
+        
         private void btnMembers_Click(object sender, EventArgs e)
         {
             openChildForm(new UserForm());
+        }
+
+        private void btnFinance_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SalesForm());
         }
     }
 }

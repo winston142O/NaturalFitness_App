@@ -66,6 +66,7 @@
             this.btnFinance.Text = "Ganancias";
             this.btnFinance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFinance.UseVisualStyleBackColor = true;
+            this.btnFinance.Click += new System.EventHandler(this.btnFinance_Click);
             // 
             // btnMembers
             // 
