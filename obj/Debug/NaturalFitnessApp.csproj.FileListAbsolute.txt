@@ -26,3 +26,9 @@ D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.WinForms.xml
 D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.Wpf.pdb
 D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.Wpf.xml
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.csproj.CopyComplete
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\EPPlus.dll
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\EPPlus.Interfaces.dll
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\EPPlus.System.Drawing.dll
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\EPPlus.xml
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

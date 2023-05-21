@@ -4,6 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +15,16 @@ using System.Xml;
 using LiveCharts;
 using LiveCharts.WinForms;
 using LiveCharts.Wpf;
+using OfficeOpenXml;
+using EELicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace NaturalFitnessApp
 {
     public partial class SalesForm : Form
     {
+        private LiveCharts.WinForms.CartesianChart salesChart;
+        private LiveCharts.WinForms.CartesianChart revenueChart;
+
         public SalesForm()
         {
             InitializeComponent();
@@ -178,7 +186,7 @@ namespace NaturalFitnessApp
         private void GenerateSalesChart()
         {
             // create x/y chart
-            var salesChart = new LiveCharts.WinForms.CartesianChart();
+            salesChart = new LiveCharts.WinForms.CartesianChart();
             // size
             salesChart.Width = 500;
             salesChart.Height = 300;
@@ -235,7 +243,7 @@ namespace NaturalFitnessApp
         private void GenerateRevenueChart()
         {
             // create x/y chart
-            var revenueChart = new LiveCharts.WinForms.CartesianChart();
+            revenueChart = new LiveCharts.WinForms.CartesianChart();
 
             // size
             revenueChart.Width = 500;
@@ -316,13 +324,13 @@ namespace NaturalFitnessApp
                 ClearInput();
                 UpdateTotals();
                 // enable all buttons
-                if (btnModify.Enabled == false && btnDelete.Enabled == false && btnGenSales.Enabled == false && btnSave.Enabled == false && btnExport.Enabled == false)
+                if (btnModify.Enabled == false && btnDelete.Enabled == false && btnGenSales.Enabled == false && btnSave.Enabled == false && btnClear.Enabled == false)
                 {
                     btnModify.Enabled = true;
                     btnDelete.Enabled = true;
                     btnGenSales.Enabled = true;
                     btnSave.Enabled = true;
-                    btnExport.Enabled = true;
+                    btnClear.Enabled = true;
                 }
             }
             else
@@ -386,6 +394,66 @@ namespace NaturalFitnessApp
         {
             GenerateSalesChart();
             GenerateRevenueChart();
+            // enable save button
+            btnSave.Enabled = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estás seguro de que quieres guardar este récord?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DateTime saleDate = dtpSaleDay.Value;
+
+                string folderPath = Path.Combine(Application.StartupPath, "Ventas", saleDate.ToString("yyyy-MM-dd"));
+
+
+                using (var package = new ExcelPackage())
+                {
+                    var salesUnitsWorksheet = package.Workbook.Worksheets.Add("Sales in Units");
+
+                    List<int> salesData = ExtractQuantityData();
+                    List<string> productNames = ExtractProductNames();
+
+                    salesUnitsWorksheet.Cells[1, 1].Value = "Product";
+                    salesUnitsWorksheet.Cells[1, 2].Value = "Quantity";
+
+                    for (int i = 0; i < salesData.Count; i++)
+                    {
+                        salesUnitsWorksheet.Cells[i + 2, 1].Value = productNames[i];
+                        salesUnitsWorksheet.Cells[i + 2, 2].Value = salesData[i];
+                    }
+
+                    var salesRevenueWorksheet = package.Workbook.Worksheets.Add("Sales in Revenue");
+
+                    List<decimal> revenueData = ExtractRevenueData();
+
+                    salesRevenueWorksheet.Cells[1, 1].Value = "Product";
+                    salesRevenueWorksheet.Cells[1, 2].Value = "Revenue";
+
+                    for (int i = 0; i < revenueData.Count; i++)
+                    {
+                        salesRevenueWorksheet.Cells[i + 2, 1].Value = productNames[i];
+                        salesRevenueWorksheet.Cells[i + 2, 2].Value = revenueData[i];
+                    }
+
+                    string excelFilePath = Path.Combine(folderPath, $"Ventas_{saleDate:yyyy-MM-dd}.xlsx");
+                    package.SaveAs(new FileInfo(excelFilePath));
+
+                    Bitmap salesUnitsChartImage = new Bitmap(salesChart.Width, salesChart.Height);
+                    salesChart.DrawToBitmap(salesUnitsChartImage, new Rectangle(0, 0, salesChart.Width, salesChart.Height));
+                    string salesUnitsChartImagePath = Path.Combine(folderPath, $"SalesUnitsChart_{saleDate:yyyy-MM-dd}.png");
+                    salesUnitsChartImage.Save(salesUnitsChartImagePath, System.Drawing.Imaging.ImageFormat.Png);
+
+                    Bitmap salesRevenueChartImage = new Bitmap(revenueChart.Width, revenueChart.Height);
+                    revenueChart.DrawToBitmap(salesRevenueChartImage, new Rectangle(0, 0, revenueChart.Width, revenueChart.Height));
+                    string salesRevenueChartImagePath = Path.Combine(folderPath, $"SalesRevenueChart_{saleDate:yyyy-MM-dd}.png");
+                    salesRevenueChartImage.Save(salesRevenueChartImagePath, System.Drawing.Imaging.ImageFormat.Png);
+                }
+            }
+            else
+            {
+                // nothing
+            }                        
         }
     }
 }

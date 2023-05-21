@@ -28,38 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelTopBar = new System.Windows.Forms.Panel();
             this.btnFinance = new System.Windows.Forms.Button();
             this.btnMembers = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.NF_Logo = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBottomBar = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelTopBar.SuspendLayout();
+            this.flpTopBar = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelMain.SuspendLayout();
+            this.flpTopBar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelTopBar
-            // 
-            this.panelTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
-            this.panelTopBar.Controls.Add(this.btnFinance);
-            this.panelTopBar.Controls.Add(this.btnMembers);
-            this.panelTopBar.Controls.Add(this.btnInventory);
-            this.panelTopBar.Controls.Add(this.NF_Logo);
-            this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTopBar.Name = "panelTopBar";
-            this.panelTopBar.Size = new System.Drawing.Size(1348, 150);
-            this.panelTopBar.TabIndex = 0;
             // 
             // btnFinance
             // 
-            this.btnFinance.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnFinance.FlatAppearance.BorderSize = 0;
             this.btnFinance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinance.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.btnFinance.ForeColor = System.Drawing.Color.White;
             this.btnFinance.Image = global::NaturalFitnessApp.Properties.Resources.finance_white;
-            this.btnFinance.Location = new System.Drawing.Point(653, 0);
+            this.btnFinance.Location = new System.Drawing.Point(674, 3);
             this.btnFinance.Name = "btnFinance";
             this.btnFinance.Size = new System.Drawing.Size(266, 150);
             this.btnFinance.TabIndex = 2;
@@ -70,13 +57,12 @@
             // 
             // btnMembers
             // 
-            this.btnMembers.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnMembers.FlatAppearance.BorderSize = 0;
             this.btnMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.btnMembers.ForeColor = System.Drawing.Color.White;
             this.btnMembers.Image = global::NaturalFitnessApp.Properties.Resources.group_white;
-            this.btnMembers.Location = new System.Drawing.Point(416, 0);
+            this.btnMembers.Location = new System.Drawing.Point(431, 3);
             this.btnMembers.Name = "btnMembers";
             this.btnMembers.Size = new System.Drawing.Size(237, 150);
             this.btnMembers.TabIndex = 3;
@@ -87,13 +73,12 @@
             // 
             // btnInventory
             // 
-            this.btnInventory.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.ForeColor = System.Drawing.Color.White;
             this.btnInventory.Image = global::NaturalFitnessApp.Properties.Resources.inventory_white;
-            this.btnInventory.Location = new System.Drawing.Point(185, 0);
+            this.btnInventory.Location = new System.Drawing.Point(194, 3);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(231, 150);
             this.btnInventory.TabIndex = 1;
@@ -106,8 +91,7 @@
             // 
             this.NF_Logo.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.NaturalFitness;
             this.NF_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.NF_Logo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.NF_Logo.Location = new System.Drawing.Point(0, 0);
+            this.NF_Logo.Location = new System.Drawing.Point(3, 3);
             this.NF_Logo.Name = "NF_Logo";
             this.NF_Logo.Size = new System.Drawing.Size(185, 150);
             this.NF_Logo.TabIndex = 1;
@@ -123,12 +107,26 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.flpTopBar);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 150);
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1348, 724);
+            this.panelMain.Size = new System.Drawing.Size(1348, 874);
             this.panelMain.TabIndex = 2;
+            // 
+            // flpTopBar
+            // 
+            this.flpTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
+            this.flpTopBar.Controls.Add(this.NF_Logo);
+            this.flpTopBar.Controls.Add(this.btnInventory);
+            this.flpTopBar.Controls.Add(this.btnMembers);
+            this.flpTopBar.Controls.Add(this.btnFinance);
+            this.flpTopBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpTopBar.Location = new System.Drawing.Point(0, 0);
+            this.flpTopBar.Name = "flpTopBar";
+            this.flpTopBar.Size = new System.Drawing.Size(1348, 158);
+            this.flpTopBar.TabIndex = 0;
             // 
             // App
             // 
@@ -138,24 +136,23 @@
             this.ClientSize = new System.Drawing.Size(1348, 884);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelBottomBar);
-            this.Controls.Add(this.panelTopBar);
             this.Name = "App";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Natural Fitness Manager";
-            this.panelTopBar.ResumeLayout(false);
+            this.panelMain.ResumeLayout(false);
+            this.flpTopBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelTopBar;
         private System.Windows.Forms.FlowLayoutPanel NF_Logo;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Panel panelBottomBar;
         private System.Windows.Forms.Button btnFinance;
         private System.Windows.Forms.Button btnMembers;
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.FlowLayoutPanel flpTopBar;
     }
 }
