@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using LiveCharts;
+using LiveCharts.WinForms;
+using LiveCharts.Wpf;
 
 namespace NaturalFitnessApp
 {
@@ -71,27 +74,221 @@ namespace NaturalFitnessApp
         }
 
         private void UpdateTotals()
-        {            
+        {
             decimal totalSales = 0;
             int totalQty = 0;
+
+            // store cuantities
+            Dictionary<string, int> productQuantities = new Dictionary<string, int>();
+
             foreach (var item in lstOrder.Items)
             {
                 string[] saleParts = item.ToString().Split('-');
+                string productName = saleParts[0].Trim();
                 int quantity = Convert.ToInt32(saleParts[1].Trim().Split(' ')[0]);
-                decimal itemPrice = GetItemPriceFromDatabase(saleParts[0]);
+                decimal itemPrice = GetItemPriceFromDatabase(productName);
                 totalSales += quantity * itemPrice;
                 totalQty += quantity;
+
+                // update quantities
+                if (productQuantities.ContainsKey(productName))
+                {
+                    productQuantities[productName] += quantity;
+                }
+                else
+                {
+                    productQuantities.Add(productName, quantity);
+                }
             }
+
             txtTotal.Text = String.Format("RD${0:F2}", totalSales);
             txtUnitsSold.Text = String.Format("{0}", totalQty);
             ClearInput();
+
+            // most sold product
+            int maxQuantity = 0;
+            string mostSoldProduct = string.Empty;
+
+            foreach (var entry in productQuantities)
+            {
+                if (entry.Value > maxQuantity)
+                {
+                    maxQuantity = entry.Value;
+                    mostSoldProduct = entry.Key;
+                }
+            }
+
+            txtMostSold.Text = mostSoldProduct;
         }
 
         private void ClearInput()
         {
             cbxProduct.SelectedIndex = -1;
             nudProdQty.Value = 0;
+        }        
+
+        private List<int> ExtractQuantityData()
+        {
+            List<int> salesData = new List<int>();
+
+            // get quantity
+            foreach (var item in lstOrder.Items)
+            {
+                string[] saleParts = item.ToString().Split('-');
+                int quantity = Convert.ToInt32(saleParts[1].Trim().Split(' ')[0]);
+                salesData.Add(quantity);
+            }
+
+            return salesData;
         }
+
+        private List<string> ExtractProductNames()
+        {           
+            List<string> productNames = new List<string>();
+
+            // get product names
+            foreach (var item in lstOrder.Items)
+            {
+                string[] saleParts = item.ToString().Split('-');
+                string productName = saleParts[0].Trim();
+                productNames.Add(productName);
+            }
+
+            return productNames;
+        }
+        private List<decimal> ExtractRevenueData()
+        {
+            List<decimal> revenueData = new List<decimal>();
+
+            // extract earnings $
+            foreach (var item in lstOrder.Items)
+            {
+                string[] saleParts = item.ToString().Split('-');
+                string productName = saleParts[0].Trim();
+                int quantity = Convert.ToInt32(saleParts[1].Trim().Split(' ')[0]);
+                decimal itemPrice = GetItemPriceFromDatabase(productName);
+                decimal revenue = itemPrice * quantity;
+                revenueData.Add(revenue);
+            }
+
+            return revenueData;
+        }
+
+        // graph 1: unities sold
+        private void GenerateSalesChart()
+        {
+            // create x/y chart
+            var salesChart = new LiveCharts.WinForms.CartesianChart();
+            // size
+            salesChart.Width = 500;
+            salesChart.Height = 300;
+
+            // new collection
+            var seriesCollection = new SeriesCollection();
+
+            // get required data
+            List<int> salesData = ExtractQuantityData();
+            List<string> productNames = ExtractProductNames();
+
+            // new series
+            var salesSeries = new ColumnSeries
+            {
+                Title = String.Format("Ventas {0}", dtpSaleDay.Value),
+                Values = new ChartValues<int>(salesData),
+                Fill = System.Windows.Media.Brushes.DodgerBlue, // col color
+                Stroke = System.Windows.Media.Brushes.Black, // col outline color
+                StrokeThickness = 1 // col outline thickness
+            };
+
+            // x asis column names
+            salesChart.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Productos",
+                Labels = productNames,
+                Foreground = System.Windows.Media.Brushes.Black // lbl colors
+            });
+
+            // y axis
+            salesChart.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Ventas",
+                Foreground = System.Windows.Media.Brushes.Black, // lbl colors
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Stroke = System.Windows.Media.Brushes.LightGray, // separator color
+                    StrokeThickness = 1 // separator thickness
+                }
+            });
+
+            // Add series to collection
+            seriesCollection.Add(salesSeries);
+
+            // add collection to chart
+            salesChart.Series = seriesCollection;
+
+            // add chart to control
+            salesChart.Dock = DockStyle.Top;
+            tlpGraph1.Controls.Add(salesChart);
+        }
+
+
+        private void GenerateRevenueChart()
+        {
+            // create x/y chart
+            var revenueChart = new LiveCharts.WinForms.CartesianChart();
+
+            // size
+            revenueChart.Width = 500;
+            revenueChart.Height = 300;
+
+            // new collection
+            var seriesCollection = new SeriesCollection();
+
+            // get required data
+            List<decimal> revenueData = ExtractRevenueData();
+            List<string> productNames = ExtractProductNames();
+
+            // new series
+            var revenueSeries = new ColumnSeries
+            {
+                Title = $"Ganancias {dtpSaleDay.Value}",
+                Values = new ChartValues<decimal>(revenueData),
+                Fill = System.Windows.Media.Brushes.Orange, // col color
+                Stroke = System.Windows.Media.Brushes.Black, // col outline color
+                StrokeThickness = 1 // col outline thickness
+            };
+
+            // x asis column names
+            revenueChart.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Productos",
+                Labels = productNames,
+                Foreground = System.Windows.Media.Brushes.Black // lbl colors
+            });
+
+            // y axis
+            revenueChart.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Ganancias",
+                Foreground = System.Windows.Media.Brushes.Black, // lbl colors
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Stroke = System.Windows.Media.Brushes.LightGray, // separator color
+                    StrokeThickness = 1 // separator thickness
+                }
+            });
+
+            // add series to collection
+            seriesCollection.Add(revenueSeries);
+
+            // add collection to chart
+            revenueChart.Series = seriesCollection;
+
+            // add chart to control
+            revenueChart.Dock = DockStyle.Top;
+            tlpGraph2.Controls.Add(revenueChart);
+        }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -117,6 +314,16 @@ namespace NaturalFitnessApp
                 txtTotal.Text = String.Format("RD${0:F2}", totalSales);
                 txtUnitsSold.Text = String.Format("{0}", totalQty);
                 ClearInput();
+                UpdateTotals();
+                // enable all buttons
+                if (btnModify.Enabled == false && btnDelete.Enabled == false && btnGenSales.Enabled == false && btnSave.Enabled == false && btnExport.Enabled == false)
+                {
+                    btnModify.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnGenSales.Enabled = true;
+                    btnSave.Enabled = true;
+                    btnExport.Enabled = true;
+                }
             }
             else
             {
@@ -126,9 +333,9 @@ namespace NaturalFitnessApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Estás seguro de que quieres eliminar esta venta?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (lstOrder.SelectedItem != null)
             {
-                if (lstOrder.SelectedItem != null)
+                if (MessageBox.Show("¿Estás seguro de que quieres eliminar esta venta?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     // remove sale from list
                     lstOrder.Items.RemoveAt(lstOrder.SelectedIndex);
@@ -137,12 +344,12 @@ namespace NaturalFitnessApp
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar una venta para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // nothing
                 }
-            }
+            }            
             else
             {
-                // nothing
+                MessageBox.Show("Debe seleccionar una venta para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -173,6 +380,12 @@ namespace NaturalFitnessApp
             {
                 MessageBox.Show("Debe seleccionar una venta para modificar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnGenSales_Click(object sender, EventArgs e)
+        {
+            GenerateSalesChart();
+            GenerateRevenueChart();
         }
     }
 }

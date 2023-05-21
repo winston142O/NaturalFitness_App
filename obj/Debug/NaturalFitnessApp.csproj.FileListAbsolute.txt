@@ -16,3 +16,13 @@ D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.InventoryFor
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.AddProductForm.resources
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.SalesForm.resources
 D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.ModifyQuantityDialog.resources
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.dll
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.WinForms.dll
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.Wpf.dll
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.pdb
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.xml
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.WinForms.pdb
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.WinForms.xml
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.Wpf.pdb
+D:\Coding\C#\Projects\NaturalFitnessApp\bin\Debug\LiveCharts.Wpf.xml
+D:\Coding\C#\Projects\NaturalFitnessApp\obj\Debug\NaturalFitnessApp.csproj.CopyComplete
