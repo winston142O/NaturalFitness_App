@@ -78,7 +78,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMemberType = new System.Windows.Forms.Label();
             this.btnClear2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -424,6 +424,7 @@
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Limpiar";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // tlpDailySales
             // 
@@ -597,7 +598,7 @@
             this.tbEntrance.Location = new System.Drawing.Point(4, 25);
             this.tbEntrance.Name = "tbEntrance";
             this.tbEntrance.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEntrance.Size = new System.Drawing.Size(1340, 637);
+            this.tbEntrance.Size = new System.Drawing.Size(1340, 643);
             this.tbEntrance.TabIndex = 1;
             this.tbEntrance.Text = "Entrada de personas";
             this.tbEntrance.UseVisualStyleBackColor = true;
@@ -618,7 +619,7 @@
             this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEntrance.Size = new System.Drawing.Size(410, 631);
+            this.tlpEntrance.Size = new System.Drawing.Size(410, 637);
             this.tlpEntrance.TabIndex = 0;
             // 
             // lblDateEntrance
@@ -688,7 +689,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.46822F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.893643F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.893643F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(402, 631);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(402, 637);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // groupBox1
@@ -700,7 +701,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 364);
+            this.groupBox1.Size = new System.Drawing.Size(396, 368);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Añadir Venta";
@@ -719,7 +720,7 @@
             this.tableLayoutPanel2.Controls.Add(this.button3, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.button4, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblMemberType, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 26);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
@@ -731,7 +732,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 332);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 336);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // numericUpDown1
@@ -825,17 +826,17 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Cantidad:";
             // 
-            // label3
+            // lblMemberType
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblMemberType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 26);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Producto:";
+            this.lblMemberType.AutoSize = true;
+            this.lblMemberType.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberType.Location = new System.Drawing.Point(3, 0);
+            this.lblMemberType.Name = "lblMemberType";
+            this.lblMemberType.Size = new System.Drawing.Size(101, 26);
+            this.lblMemberType.TabIndex = 5;
+            this.lblMemberType.Text = "Producto:";
             // 
             // btnClear2
             // 
@@ -844,12 +845,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear2.Enabled = false;
             this.btnClear2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear2.Location = new System.Drawing.Point(3, 595);
+            this.btnClear2.Location = new System.Drawing.Point(3, 601);
             this.btnClear2.Name = "btnClear2";
             this.btnClear2.Size = new System.Drawing.Size(396, 33);
             this.btnClear2.TabIndex = 4;
             this.btnClear2.Text = "Limpiar";
             this.btnClear2.UseVisualStyleBackColor = true;
+            this.btnClear2.Click += new System.EventHandler(this.btnClear2_Click);
             // 
             // groupBox2
             // 
@@ -858,9 +860,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.tableLayoutPanel3);
             this.groupBox2.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(3, 373);
+            this.groupBox2.Location = new System.Drawing.Point(3, 377);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(396, 179);
+            this.groupBox2.Size = new System.Drawing.Size(396, 181);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Estadísticas";
@@ -964,7 +966,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Enabled = false;
             this.button6.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(3, 558);
+            this.button6.Location = new System.Drawing.Point(3, 564);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(396, 31);
             this.button6.TabIndex = 2;
@@ -983,7 +985,7 @@
             this.tlpGraphs2.RowCount = 2;
             this.tlpGraphs2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpGraphs2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpGraphs2.Size = new System.Drawing.Size(522, 631);
+            this.tlpGraphs2.Size = new System.Drawing.Size(522, 637);
             this.tlpGraphs2.TabIndex = 10;
             // 
             // tlpPplGraph2
@@ -993,11 +995,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpPplGraph2.ColumnCount = 1;
             this.tlpPplGraph2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPplGraph2.Location = new System.Drawing.Point(3, 318);
+            this.tlpPplGraph2.Location = new System.Drawing.Point(3, 321);
             this.tlpPplGraph2.Name = "tlpPplGraph2";
             this.tlpPplGraph2.RowCount = 1;
             this.tlpPplGraph2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPplGraph2.Size = new System.Drawing.Size(516, 310);
+            this.tlpPplGraph2.Size = new System.Drawing.Size(516, 313);
             this.tlpPplGraph2.TabIndex = 0;
             // 
             // tlpPplGraph1
@@ -1011,7 +1013,7 @@
             this.tlpPplGraph1.Name = "tlpPplGraph1";
             this.tlpPplGraph1.RowCount = 1;
             this.tlpPplGraph1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPplGraph1.Size = new System.Drawing.Size(516, 309);
+            this.tlpPplGraph1.Size = new System.Drawing.Size(516, 312);
             this.tlpPplGraph1.TabIndex = 0;
             // 
             // SalesForm
@@ -1108,7 +1110,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMemberType;
         private System.Windows.Forms.Button btnClear2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

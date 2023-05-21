@@ -28,6 +28,9 @@ namespace NaturalFitnessApp
         public SalesForm()
         {
             InitializeComponent();
+            GenerateChart1();
+            GenerateChart2();
+
         }
         private void PopulateComboBox()
         {
@@ -50,13 +53,11 @@ namespace NaturalFitnessApp
 
                 reader.Close();
             }
-        }
-          
+        }          
         private void SalesForm_Load(object sender, EventArgs e)
         {
             PopulateComboBox();
         }
-
         private decimal GetItemPriceFromDatabase(string productName)
         {
             string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Winst\Documents\dbNF_Users.mdf;Integrated Security=True;Connect Timeout=30";
@@ -80,7 +81,6 @@ namespace NaturalFitnessApp
             // default price
             return 0;
         }
-
         private void UpdateTotals()
         {
             decimal totalSales = 0;
@@ -128,13 +128,11 @@ namespace NaturalFitnessApp
 
             txtMostSold.Text = mostSoldProduct;
         }
-
         private void ClearInput()
         {
             cbxProduct.SelectedIndex = -1;
             nudProdQty.Value = 0;
         }        
-
         private List<int> ExtractQuantityData()
         {
             List<int> salesData = new List<int>();
@@ -149,7 +147,6 @@ namespace NaturalFitnessApp
 
             return salesData;
         }
-
         private List<string> ExtractProductNames()
         {           
             List<string> productNames = new List<string>();
@@ -181,9 +178,8 @@ namespace NaturalFitnessApp
 
             return revenueData;
         }
-
-        // graph 1: unities sold
-        private void GenerateSalesChart()
+        // generate empty charts
+        private void GenerateChart1()
         {
             // create x/y chart
             salesChart = new LiveCharts.WinForms.CartesianChart();
@@ -236,11 +232,9 @@ namespace NaturalFitnessApp
 
             // add chart to control
             salesChart.Dock = DockStyle.Top;
-            tlpGraph1.Controls.Add(salesChart);
+            tlpGraph1.Controls.Add(salesChart);            
         }
-
-
-        private void GenerateRevenueChart()
+        private void GenerateChart2()
         {
             // create x/y chart
             revenueChart = new LiveCharts.WinForms.CartesianChart();
@@ -297,7 +291,102 @@ namespace NaturalFitnessApp
             tlpGraph2.Controls.Add(revenueChart);
         }
 
+        // graph 1: unities sold (inv)
+        private void GenerateSalesChart()
+        {
+            // Clear existing series
+            salesChart.Series.Clear();
+            salesChart.AxisX.Clear();
+            salesChart.AxisY.Clear();
 
+            // Get data
+            List<int> salesData = ExtractQuantityData();
+            List<string> productNames = ExtractProductNames();
+
+            // New series
+            var salesSeries = new ColumnSeries
+            {
+                Title = String.Format("Ventas {0}", dtpSaleDay.Value),
+                Values = new ChartValues<int>(salesData),
+                Fill = System.Windows.Media.Brushes.DodgerBlue,
+                Stroke = System.Windows.Media.Brushes.Black,
+                StrokeThickness = 1
+            };
+
+            // X-axis column names
+            salesChart.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Productos",
+                Labels = productNames,
+                Foreground = System.Windows.Media.Brushes.Black
+            });
+
+            // Y-axis
+            salesChart.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Ventas",
+                Foreground = System.Windows.Media.Brushes.Black,
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Stroke = System.Windows.Media.Brushes.LightGray,
+                    StrokeThickness = 1
+                }
+            });
+
+            // Add series to chart
+            salesChart.Series.Add(salesSeries);
+
+            // Update the chart
+            salesChart.Update();
+        }
+        // graph 2: money earning per product (inv)
+        private void GenerateRevenueChart()
+        {
+            // Clear existing series
+            revenueChart.Series.Clear();
+            revenueChart.AxisX.Clear();
+            revenueChart.AxisY.Clear();
+
+            // Get required data
+            List<decimal> revenueData = ExtractRevenueData();
+            List<string> productNames = ExtractProductNames();
+
+            // New series
+            var revenueSeries = new ColumnSeries
+            {
+                Title = $"Ganancias {dtpSaleDay.Value}",
+                Values = new ChartValues<decimal>(revenueData),
+                Fill = System.Windows.Media.Brushes.Orange,
+                Stroke = System.Windows.Media.Brushes.Black,
+                StrokeThickness = 1
+            };
+
+            // X-axis column names
+            revenueChart.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Productos",
+                Labels = productNames,
+                Foreground = System.Windows.Media.Brushes.Black
+            });
+
+            // Y-axis
+            revenueChart.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Ganancias",
+                Foreground = System.Windows.Media.Brushes.Black,
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Stroke = System.Windows.Media.Brushes.LightGray,
+                    StrokeThickness = 1
+                }
+            });
+
+            // Add series to chart
+            revenueChart.Series.Add(revenueSeries);
+
+            // Update the chart
+            revenueChart.Update();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (cbxProduct.SelectedItem != null && nudProdQty.Value > 0)
@@ -329,7 +418,6 @@ namespace NaturalFitnessApp
                     btnModify.Enabled = true;
                     btnDelete.Enabled = true;
                     btnGenSales.Enabled = true;
-                    btnSave.Enabled = true;
                     btnClear.Enabled = true;
                 }
             }
@@ -338,7 +426,6 @@ namespace NaturalFitnessApp
                 MessageBox.Show("Debe seleccionar el producto y la cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (lstOrder.SelectedItem != null)
@@ -360,7 +447,6 @@ namespace NaturalFitnessApp
                 MessageBox.Show("Debe seleccionar una venta para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnModify_Click(object sender, EventArgs e)
         {
             if (lstOrder.SelectedItem != null)
@@ -389,7 +475,6 @@ namespace NaturalFitnessApp
                 MessageBox.Show("Debe seleccionar una venta para modificar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnGenSales_Click(object sender, EventArgs e)
         {
             GenerateSalesChart();
@@ -397,7 +482,6 @@ namespace NaturalFitnessApp
             // enable save button
             btnSave.Enabled = true;
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Estás seguro de que quieres guardar este récord?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -406,54 +490,91 @@ namespace NaturalFitnessApp
 
                 string folderPath = Path.Combine(Application.StartupPath, "Ventas", saleDate.ToString("yyyy-MM-dd"));
 
-
-                using (var package = new ExcelPackage())
+                try
                 {
-                    var salesUnitsWorksheet = package.Workbook.Worksheets.Add("Sales in Units");
-
-                    List<int> salesData = ExtractQuantityData();
-                    List<string> productNames = ExtractProductNames();
-
-                    salesUnitsWorksheet.Cells[1, 1].Value = "Product";
-                    salesUnitsWorksheet.Cells[1, 2].Value = "Quantity";
-
-                    for (int i = 0; i < salesData.Count; i++)
+                    using (var package = new ExcelPackage())
                     {
-                        salesUnitsWorksheet.Cells[i + 2, 1].Value = productNames[i];
-                        salesUnitsWorksheet.Cells[i + 2, 2].Value = salesData[i];
+                        var salesUnitsWorksheet = package.Workbook.Worksheets.Add("Sales in Units");
+
+                        List<int> salesData = ExtractQuantityData();
+                        List<string> productNames = ExtractProductNames();
+
+                        salesUnitsWorksheet.Cells[1, 1].Value = "Producto";
+                        salesUnitsWorksheet.Cells[1, 2].Value = "Unidades Vendias";
+
+                        for (int i = 0; i < salesData.Count; i++)
+                        {
+                            salesUnitsWorksheet.Cells[i + 2, 1].Value = productNames[i];
+                            salesUnitsWorksheet.Cells[i + 2, 2].Value = salesData[i];
+                        }
+
+                        var salesRevenueWorksheet = package.Workbook.Worksheets.Add("Sales in Revenue");
+
+                        List<decimal> revenueData = ExtractRevenueData();
+
+                        salesRevenueWorksheet.Cells[1, 1].Value = "Producto";
+                        salesRevenueWorksheet.Cells[1, 2].Value = "Ganancias Obtenidas";
+
+                        for (int i = 0; i < revenueData.Count; i++)
+                        {
+                            salesRevenueWorksheet.Cells[i + 2, 1].Value = productNames[i];
+                            salesRevenueWorksheet.Cells[i + 2, 2].Value = revenueData[i];
+                        }
+
+                        string excelFilePath = Path.Combine(folderPath, $"Ventas_{saleDate:yyyy-MM-dd}.xlsx");
+                        package.SaveAs(new FileInfo(excelFilePath));
+
+                        Bitmap salesUnitsChartImage = new Bitmap(salesChart.Width, salesChart.Height);
+                        salesChart.DrawToBitmap(salesUnitsChartImage, new Rectangle(0, 0, salesChart.Width, salesChart.Height));
+                        string salesUnitsChartImagePath = Path.Combine(folderPath, $"UnidadesGrafico_{saleDate:yyyy-MM-dd}.png");
+                        salesUnitsChartImage.Save(salesUnitsChartImagePath, System.Drawing.Imaging.ImageFormat.Png);
+
+                        Bitmap salesRevenueChartImage = new Bitmap(revenueChart.Width, revenueChart.Height);
+                        revenueChart.DrawToBitmap(salesRevenueChartImage, new Rectangle(0, 0, revenueChart.Width, revenueChart.Height));
+                        string salesRevenueChartImagePath = Path.Combine(folderPath, $"GananciasGrafico_{saleDate:yyyy-MM-dd}.png");
+                        salesRevenueChartImage.Save(salesRevenueChartImagePath, System.Drawing.Imaging.ImageFormat.Png);
                     }
 
-                    var salesRevenueWorksheet = package.Workbook.Worksheets.Add("Sales in Revenue");
-
-                    List<decimal> revenueData = ExtractRevenueData();
-
-                    salesRevenueWorksheet.Cells[1, 1].Value = "Product";
-                    salesRevenueWorksheet.Cells[1, 2].Value = "Revenue";
-
-                    for (int i = 0; i < revenueData.Count; i++)
-                    {
-                        salesRevenueWorksheet.Cells[i + 2, 1].Value = productNames[i];
-                        salesRevenueWorksheet.Cells[i + 2, 2].Value = revenueData[i];
-                    }
-
-                    string excelFilePath = Path.Combine(folderPath, $"Ventas_{saleDate:yyyy-MM-dd}.xlsx");
-                    package.SaveAs(new FileInfo(excelFilePath));
-
-                    Bitmap salesUnitsChartImage = new Bitmap(salesChart.Width, salesChart.Height);
-                    salesChart.DrawToBitmap(salesUnitsChartImage, new Rectangle(0, 0, salesChart.Width, salesChart.Height));
-                    string salesUnitsChartImagePath = Path.Combine(folderPath, $"SalesUnitsChart_{saleDate:yyyy-MM-dd}.png");
-                    salesUnitsChartImage.Save(salesUnitsChartImagePath, System.Drawing.Imaging.ImageFormat.Png);
-
-                    Bitmap salesRevenueChartImage = new Bitmap(revenueChart.Width, revenueChart.Height);
-                    revenueChart.DrawToBitmap(salesRevenueChartImage, new Rectangle(0, 0, revenueChart.Width, revenueChart.Height));
-                    string salesRevenueChartImagePath = Path.Combine(folderPath, $"SalesRevenueChart_{saleDate:yyyy-MM-dd}.png");
-                    salesRevenueChartImage.Save(salesRevenueChartImagePath, System.Drawing.Imaging.ImageFormat.Png);
+                    MessageBox.Show("Los datos se han guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(folderPath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al guardar los datos. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 // nothing
-            }                        
+            }                              
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estás seguro de que quieres borrar todos los datos de hoy? LOS PERDERAS SI NO LOS HAS GUARDADO...", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                cbxProduct.SelectedIndex = -1;
+                nudProdQty.Value = 0;
+                lstOrder.Items.Clear();
+                btnModify.Enabled = false;
+                btnDelete.Enabled = false;
+                btnGenSales.Enabled = false;
+                btnClear.Enabled = false;
+                btnSave.Enabled = false;
+
+                salesChart.Series.Clear();
+                revenueChart.Series.Clear();
+                salesChart.AxisX.Clear();
+                revenueChart.AxisX.Clear();
+
+            }
+            else
+            {
+                // nothing
+            }
+        }
+        private void btnClear2_Click(object sender, EventArgs e)
+        {
+                     
         }
     }
 }
