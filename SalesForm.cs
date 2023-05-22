@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using LiveCharts;
+using LiveCharts.Definitions.Charts;
 using LiveCharts.WinForms;
 using LiveCharts.Wpf;
 using OfficeOpenXml;
@@ -24,6 +25,7 @@ namespace NaturalFitnessApp
     {
         private LiveCharts.WinForms.CartesianChart salesChart;
         private LiveCharts.WinForms.CartesianChart revenueChart;
+        private LiveCharts.WinForms.CartesianChart rateChart;
         private LiveCharts.WinForms.CartesianChart revenueChart2;
         private int visitantCount = 0;
 
@@ -32,9 +34,8 @@ namespace NaturalFitnessApp
             InitializeComponent();
             GenerateChart1();
             GenerateChart2();
-            generatePieChart();
-            revenueChart2 = new LiveCharts.WinForms.CartesianChart();
-
+            generateStartRateChart();
+            genStartUpRevChart();
         }
 
         // TAB 1
@@ -500,6 +501,8 @@ namespace NaturalFitnessApp
 
                 try
                 {
+                    Directory.CreateDirectory(folderPath); // Create the folder if it doesn't exist
+
                     using (var package = new ExcelPackage())
                     {
                         var salesUnitsWorksheet = package.Workbook.Worksheets.Add("Sales in Units");
@@ -544,7 +547,6 @@ namespace NaturalFitnessApp
                     }
 
                     MessageBox.Show("Los datos se han guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MessageBox.Show(folderPath);
                 }
                 catch (Exception ex)
                 {
@@ -607,7 +609,7 @@ namespace NaturalFitnessApp
                 reader.Close();
             }
         }
-        private void generatePieChart()
+        private void generateStartRateChart()
         {
             int memberCount = 0;
             int visitantCount = 0;
@@ -627,42 +629,230 @@ namespace NaturalFitnessApp
                 }
             }
 
-            // Create the pie chart
-            var pieChart = new LiveCharts.WinForms.PieChart();
-            pieChart.Width = 500;
-            pieChart.Height = 300;
+            // Create the Cartesian chart
+            rateChart = new LiveCharts.WinForms.CartesianChart();
+            rateChart.Width = 500;
+            rateChart.Height = 300;
 
-            // Create a chart series with member and visitor data
-            var series = new SeriesCollection
+            // Create a series collection with member and visitor data
+            var seriesCollection = new SeriesCollection
             {
-                new PieSeries
+                new ColumnSeries
                 {
                     Title = "Miembros",
                     Values = new ChartValues<int> { memberCount },
-                    DataLabels = true
+                    Fill = System.Windows.Media.Brushes.DodgerBlue,
+                    Stroke = System.Windows.Media.Brushes.Black,
+                    StrokeThickness = 1
                 },
-                new PieSeries
+                new ColumnSeries
                 {
                     Title = "Visitantes",
                     Values = new ChartValues<int> { visitantCount },
-                    DataLabels = true
+                    Fill = System.Windows.Media.Brushes.Orange,
+                    Stroke = System.Windows.Media.Brushes.Black,
+                    StrokeThickness = 1
                 }
             };
 
             // Set the series collection to the chart
-            pieChart.Series = series;
+            rateChart.Series = seriesCollection;
+
+            // Create an x-axis for the chart
+            rateChart.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Categorías",
+                Labels = new[] { "Personas" },
+                Foreground = System.Windows.Media.Brushes.Black
+            });
+
+            // Create a y-axis for the chart
+            rateChart.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Personas",
+                Foreground = System.Windows.Media.Brushes.Black,
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Stroke = System.Windows.Media.Brushes.LightGray,
+                    StrokeThickness = 1
+                }
+            });
 
             // Add the chart to the form or container
-            pieChart.Dock = DockStyle.Top;
-            // Replace tlpGraph1 with the appropriate container control in your form
-            tlpPplGraph1.Controls.Add(pieChart);
+            rateChart.Dock = DockStyle.Top;
+            // Replace tlpPplGraph1 with the appropriate container control in your form
+            tlpPplGraph1.Controls.Add(rateChart);
+        }
+
+        private void generateRateChart()
+        {
+            // Clear existing series
+            rateChart.Series.Clear();
+            rateChart.AxisX.Clear();
+            rateChart.AxisY.Clear();
+
+            rateChart.Width = 500;
+            rateChart.Height = 300;
+
+            int memberCount = 0;
+            int visitantCount = 0;
+
+            // Count the number of members and visitors
+            foreach (var item in lstEntrance.Items)
+            {
+                string entranceItem = item.ToString();
+
+                if (!entranceItem.Contains("VISITANTE"))
+                {
+                    memberCount++;
+                }
+                else
+                {
+                    visitantCount++;
+                }
+            }
+
+            // Create a series collection with member and visitor revenue data
+            var seriesCollection = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Title = "Miembros",
+                    Values = new ChartValues<int> { memberCount },
+                    Fill = System.Windows.Media.Brushes.DodgerBlue,
+                    Stroke = System.Windows.Media.Brushes.Black,
+                    StrokeThickness = 1
+                },
+                new ColumnSeries
+                {
+                    Title = "Visitantes",
+                    Values = new ChartValues<int> { visitantCount },
+                    Fill = System.Windows.Media.Brushes.Orange,
+                    Stroke = System.Windows.Media.Brushes.Black,
+                    StrokeThickness = 1
+                }
+            };
+
+            // Create an x-axis for the chart
+            rateChart.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Categorías",
+                Labels = new[] { "Personas" },
+                Foreground = System.Windows.Media.Brushes.Black
+            });
+
+            // Create a y-axis for the chart
+            rateChart.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Personas",
+                Foreground = System.Windows.Media.Brushes.Black,
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Stroke = System.Windows.Media.Brushes.LightGray,
+                    StrokeThickness = 1
+                }
+            });
+
+            // Add the series collection to the chart
+            rateChart.Series = seriesCollection;
+
+            // Clear the existing controls in tlpPplGraph2
+            tlpPplGraph1.Controls.Clear();
+
+            // Add the chart to the form or container
+            rateChart.Dock = DockStyle.Fill;
+            tlpPplGraph1.Controls.Add(rateChart);
+        }
+        private void genStartUpRevChart()
+        {
+            // create x/y chart
+            revenueChart2 = new LiveCharts.WinForms.CartesianChart();
+
+            revenueChart2.Width = 500;
+            revenueChart2.Height = 300;
+
+            decimal dailyCost = 100;
+            decimal memberRev = 1300.00M / 31.00M;
+            decimal memberRevenue = 0;
+            decimal visitantRevenue = 0;
+
+            // Calculate revenue generated by members and visitors
+            foreach (var item in lstEntrance.Items)
+            {
+                string entranceItem = item.ToString();
+
+                if (!entranceItem.Contains("VISITANTE"))
+                {
+                    // Calculate revenue generated by members
+                    memberRevenue += memberRev;
+                }
+                else
+                {
+                    // Calculate revenue generated by visitors
+                    visitantRevenue += dailyCost;
+                }
+            }            
+
+            // Create a series collection with member and visitor revenue data
+            var seriesCollection = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Title = "Miembros",
+                    Values = new ChartValues<decimal> { memberRevenue },
+                    Fill = System.Windows.Media.Brushes.DodgerBlue,
+                    Stroke = System.Windows.Media.Brushes.Black,
+                    StrokeThickness = 1
+                },
+                new ColumnSeries
+                {
+                    Title = "Visitantes",
+                    Values = new ChartValues<decimal> { visitantRevenue },
+                    Fill = System.Windows.Media.Brushes.Green,
+                    Stroke = System.Windows.Media.Brushes.Black,
+                    StrokeThickness = 1
+                }
+            };
+
+            // Create an x-axis for the chart
+            revenueChart2.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Tipo",
+                Labels = new[] { "Miembros", "Visitantes" },
+                Foreground = System.Windows.Media.Brushes.Black
+            });
+
+            // Create a y-axis for the chart
+            revenueChart2.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Cantidad",
+                Foreground = System.Windows.Media.Brushes.Black,
+                Separator = new LiveCharts.Wpf.Separator
+                {
+                    Stroke = System.Windows.Media.Brushes.LightGray,
+                    StrokeThickness = 1
+                }
+            });
+
+            // Add the series collection to the chart
+            revenueChart2.Series = seriesCollection;
+
+            // Clear the existing controls in tlpPplGraph2
+            tlpPplGraph2.Controls.Clear();
+
+            // Add the chart to the form or container
+            revenueChart2.Dock = DockStyle.Fill;
+            tlpPplGraph2.Controls.Add(revenueChart2);
         }
         private void generateRevChart()
         {
-            // Clear existing series and axes
+            // Clear existing series
             revenueChart2.Series.Clear();
             revenueChart2.AxisX.Clear();
             revenueChart2.AxisY.Clear();
+
+            revenueChart2.Width = 500;
+            revenueChart2.Height = 300;
 
             decimal dailyCost = 100;
             decimal memberRev = 1300.00M / 31.00M;
@@ -692,19 +882,25 @@ namespace NaturalFitnessApp
                 new ColumnSeries
                 {
                     Title = "Miembros",
-                    Values = new ChartValues<decimal> { memberRevenue }
+                    Values = new ChartValues<decimal> { memberRevenue },
+                    Fill = System.Windows.Media.Brushes.DodgerBlue,
+                    Stroke = System.Windows.Media.Brushes.Black,
+                    StrokeThickness = 1
                 },
                 new ColumnSeries
                 {
                     Title = "Visitantes",
-                    Values = new ChartValues<decimal> { visitantRevenue }
+                    Values = new ChartValues<decimal> { visitantRevenue },
+                    Fill = System.Windows.Media.Brushes.Green,
+                    Stroke = System.Windows.Media.Brushes.Black,
+                    StrokeThickness = 1
                 }
             };
 
             // Create an x-axis for the chart
             revenueChart2.AxisX.Add(new LiveCharts.Wpf.Axis
             {
-                Title = "Ganancias",
+                Title = "Tipo",
                 Labels = new[] { "Miembros", "Visitantes" },
                 Foreground = System.Windows.Media.Brushes.Black
             });
@@ -724,10 +920,12 @@ namespace NaturalFitnessApp
             // Add the series collection to the chart
             revenueChart2.Series = seriesCollection;
 
-            // Set the chart's parent container
-            revenueChart2.Parent = tlpPplGraph2;
-            // Set the chart's size and position within the container
+            // Clear the existing controls in tlpPplGraph2
+            tlpPplGraph2.Controls.Clear();
+
+            // Add the chart to the form or container
             revenueChart2.Dock = DockStyle.Fill;
+            tlpPplGraph2.Controls.Add(revenueChart2);
         }
         
         private void chkIsMember_CheckedChanged(object sender, EventArgs e)
@@ -757,6 +955,12 @@ namespace NaturalFitnessApp
                     revenueChart2.Series.Clear();
                     revenueChart2.AxisX.Clear();
                     revenueChart2.AxisY.Clear();
+                }
+                if (rateChart != null)
+                {
+                    rateChart.Series.Clear();
+                    rateChart.AxisX.Clear();
+                    rateChart.AxisY.Clear();
                 }
             }
             else
@@ -829,7 +1033,7 @@ namespace NaturalFitnessApp
             }
             else
             {
-
+                MessageBox.Show("Debe seleccionar a un miembro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -857,16 +1061,88 @@ namespace NaturalFitnessApp
 
         private void btnSave2_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿Estás seguro de que quieres guardar este récord?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DateTime saleDate = dtpEntranceDay.Value;
 
+                string folderPath = Path.Combine(Application.StartupPath, "Entradas", saleDate.ToString("yyyy-MM-dd"));
+
+                try
+                {
+                    Directory.CreateDirectory(folderPath); // Create the folder if it doesn't exist
+
+                    using (var package = new ExcelPackage())
+                    {
+                        var entranceWorksheet = package.Workbook.Worksheets.Add("Data de entrada");
+
+                        // Save entrance data
+                        entranceWorksheet.Cells[1, 1].Value = "Registro de Entrada";
+                        for (int i = 0; i < lstEntrance.Items.Count; i++)
+                        {
+                            entranceWorksheet.Cells[i + 2, 1].Value = lstEntrance.Items[i].ToString();
+                        }
+
+                        var revenueChartWorksheet = package.Workbook.Worksheets.Add("Ganancias (gráfico)");
+                        var peopleChartWorksheet = package.Workbook.Worksheets.Add("Gráfico de tasa");
+
+                        // Save revenue chart data
+                        if (revenueChart.Series.Any())
+                        {
+                            for (int i = 0; i < revenueChart.Series[0].Values.Count; i++)
+                            {
+                                var series = revenueChart.Series[0];
+                                revenueChartWorksheet.Cells[1, i + 1].Value = series.Title;
+                                revenueChartWorksheet.Cells[2, i + 1].Value = series.Values[i];
+                            }
+                        }
+
+                        // Save people chart data
+                        if (rateChart.Series.Any())
+                        {
+                            for (int i = 0; i < rateChart.Series[0].Values.Count; i++)
+                            {
+                                var series = rateChart.Series[0];
+                                peopleChartWorksheet.Cells[1, i + 1].Value = series.Title;
+                                peopleChartWorksheet.Cells[2, i + 1].Value = series.Values[i];
+                            }
+                        }
+
+                        string excelFilePath = Path.Combine(folderPath, $"Entradas_{saleDate:yyyy-MM-dd}.xlsx");
+                        package.SaveAs(new FileInfo(excelFilePath));
+
+                        // Save sales chart as image
+                        Bitmap revenueChart2Image = new Bitmap(revenueChart2.Width, revenueChart2.Height);
+                        revenueChart2.DrawToBitmap(revenueChart2Image, new Rectangle(0, 0, revenueChart2.Width, revenueChart2.Height));
+                        string revenueChart2ImagePath = Path.Combine(folderPath, $"EntradaGrafico_{saleDate:yyyy-MM-dd}.png");
+                        revenueChart2Image.Save(revenueChart2ImagePath, System.Drawing.Imaging.ImageFormat.Png);
+
+                        // Save revenue chart as image
+                        Bitmap rateChartImage = new Bitmap(rateChart.Width, rateChart.Height);
+                        rateChart.DrawToBitmap(rateChartImage, new Rectangle(0, 0, rateChart.Width, rateChart.Height));
+                        string rateChartImagePath = Path.Combine(folderPath, $"TasaGrafico_{saleDate:yyyy-MM-dd}.png");
+                        rateChartImage.Save(rateChartImagePath, System.Drawing.Imaging.ImageFormat.Png);
+                    }
+
+                    MessageBox.Show("Los datos se han guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al guardar los datos. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // nothing
+            }
         }
-
         private void btnGenGraph2_Click(object sender, EventArgs e)
         {
             // Clear the previous chart, if any
             tlpPplGraph1.Controls.Clear();
 
             // Generate the pie chart
-            generatePieChart();
+            generateRateChart();
+            generateRevChart();
         }
     }
 }

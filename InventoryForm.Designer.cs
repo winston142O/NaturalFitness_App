@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBottomBar = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.panelLogoInv = new System.Windows.Forms.Panel();
             this.lblManageInv = new System.Windows.Forms.Label();
             this.dgvInv = new System.Windows.Forms.DataGridView();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,14 +40,10 @@
             this.ColProdCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProdPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.panelLogoInv = new System.Windows.Forms.Panel();
             this.ColEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelBottomBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInv)).BeginInit();
             this.SuspendLayout();
@@ -53,8 +51,6 @@
             // panelBottomBar
             // 
             this.panelBottomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
-            this.panelBottomBar.Controls.Add(this.lblSearch);
-            this.panelBottomBar.Controls.Add(this.txtSearch);
             this.panelBottomBar.Controls.Add(this.btnAdd);
             this.panelBottomBar.Controls.Add(this.panelLogoInv);
             this.panelBottomBar.Controls.Add(this.lblManageInv);
@@ -64,6 +60,28 @@
             this.panelBottomBar.Name = "panelBottomBar";
             this.panelBottomBar.Size = new System.Drawing.Size(1366, 67);
             this.panelBottomBar.TabIndex = 1;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::NaturalFitnessApp.Properties.Resources.add_white;
+            this.btnAdd.Location = new System.Drawing.Point(1308, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(58, 67);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // panelLogoInv
+            // 
+            this.panelLogoInv.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.inventory_white;
+            this.panelLogoInv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLogoInv.Location = new System.Drawing.Point(345, 9);
+            this.panelLogoInv.Name = "panelLogoInv";
+            this.panelLogoInv.Size = new System.Drawing.Size(55, 46);
+            this.panelLogoInv.TabIndex = 2;
             // 
             // lblManageInv
             // 
@@ -83,14 +101,14 @@
             this.dgvInv.BackgroundColor = System.Drawing.Color.White;
             this.dgvInv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(44)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInv.ColumnHeadersHeight = 30;
             this.dgvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvInv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -159,48 +177,6 @@
             this.ColDesc.MinimumWidth = 6;
             this.ColDesc.Name = "ColDesc";
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::NaturalFitnessApp.Properties.Resources.edit;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 6;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::NaturalFitnessApp.Properties.Resources.delete;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 6;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = global::NaturalFitnessApp.Properties.Resources.add_white;
-            this.btnAdd.Location = new System.Drawing.Point(1308, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(58, 67);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // panelLogoInv
-            // 
-            this.panelLogoInv.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.inventory_white;
-            this.panelLogoInv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelLogoInv.Location = new System.Drawing.Point(345, 9);
-            this.panelLogoInv.Name = "panelLogoInv";
-            this.panelLogoInv.Size = new System.Drawing.Size(55, 46);
-            this.panelLogoInv.TabIndex = 2;
-            // 
             // ColEdit
             // 
             this.ColEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -221,25 +197,25 @@
             this.ColDelete.Name = "ColDelete";
             this.ColDelete.Width = 6;
             // 
-            // txtSearch
+            // dataGridViewImageColumn1
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(920, 20);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(348, 30);
-            this.txtSearch.TabIndex = 3;
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::NaturalFitnessApp.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
             // 
-            // lblSearch
+            // dataGridViewImageColumn2
             // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
-            this.lblSearch.ForeColor = System.Drawing.Color.White;
-            this.lblSearch.Location = new System.Drawing.Point(797, 17);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(117, 32);
-            this.lblSearch.TabIndex = 4;
-            this.lblSearch.Text = "Buscar:";
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::NaturalFitnessApp.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 125;
             // 
             // InventoryForm
             // 
@@ -275,7 +251,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDesc;
         private System.Windows.Forms.DataGridViewImageColumn ColEdit;
         private System.Windows.Forms.DataGridViewImageColumn ColDelete;
-        private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.TextBox txtSearch;
     }
 }
