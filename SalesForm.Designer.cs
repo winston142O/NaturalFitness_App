@@ -68,30 +68,29 @@
             this.lstEntrance = new System.Windows.Forms.ListBox();
             this.dtpEntranceDay = new System.Windows.Forms.DateTimePicker();
             this.lblPeopleList = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tlpEntraceControls = new System.Windows.Forms.TableLayoutPanel();
+            this.gbxEntrance = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnAdd2 = new System.Windows.Forms.Button();
+            this.btnGenGraph2 = new System.Windows.Forms.Button();
+            this.cbxMembers = new System.Windows.Forms.ComboBox();
+            this.btnDelete2 = new System.Windows.Forms.Button();
+            this.btnAddNotMember = new System.Windows.Forms.Button();
             this.lblMemberType = new System.Windows.Forms.Label();
             this.btnClear2 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbxStats2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.lblEarnings2 = new System.Windows.Forms.Label();
+            this.txtEarnings2 = new System.Windows.Forms.TextBox();
+            this.lblTotalTraffic = new System.Windows.Forms.Label();
+            this.txtTotalTraffic = new System.Windows.Forms.TextBox();
+            this.lblMemberPercent = new System.Windows.Forms.Label();
+            this.txtMemberPercent = new System.Windows.Forms.TextBox();
+            this.btnSave2 = new System.Windows.Forms.Button();
             this.tlpGraphs2 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPplGraph2 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPplGraph1 = new System.Windows.Forms.TableLayoutPanel();
+            this.chkIsMember = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudProdQty)).BeginInit();
             this.gbxStats.SuspendLayout();
             this.tlpStats.SuspendLayout();
@@ -105,11 +104,10 @@
             this.tpCafeteria.SuspendLayout();
             this.tbEntrance.SuspendLayout();
             this.tlpEntrance.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.tlpEntraceControls.SuspendLayout();
+            this.gbxEntrance.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.gbxStats2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tlpGraphs2.SuspendLayout();
             this.SuspendLayout();
@@ -593,7 +591,7 @@
             // tbEntrance
             // 
             this.tbEntrance.Controls.Add(this.tlpGraphs2);
-            this.tbEntrance.Controls.Add(this.tableLayoutPanel1);
+            this.tbEntrance.Controls.Add(this.tlpEntraceControls);
             this.tbEntrance.Controls.Add(this.tlpEntrance);
             this.tbEntrance.Location = new System.Drawing.Point(4, 25);
             this.tbEntrance.Name = "tbEntrance";
@@ -644,7 +642,7 @@
             this.lstEntrance.ItemHeight = 16;
             this.lstEntrance.Location = new System.Drawing.Point(3, 93);
             this.lstEntrance.Name = "lstEntrance";
-            this.lstEntrance.Size = new System.Drawing.Size(404, 564);
+            this.lstEntrance.Size = new System.Drawing.Size(404, 532);
             this.lstEntrance.TabIndex = 5;
             // 
             // dtpEntranceDay
@@ -673,38 +671,38 @@
             this.lblPeopleList.TabIndex = 6;
             this.lblPeopleList.Text = "Listado de entrada:";
             // 
-            // tableLayoutPanel1
+            // tlpEntraceControls
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnClear2, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button6, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(413, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.74449F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.46822F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.893643F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.893643F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(402, 637);
-            this.tableLayoutPanel1.TabIndex = 9;
+            this.tlpEntraceControls.ColumnCount = 1;
+            this.tlpEntraceControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpEntraceControls.Controls.Add(this.gbxEntrance, 0, 0);
+            this.tlpEntraceControls.Controls.Add(this.btnClear2, 0, 3);
+            this.tlpEntraceControls.Controls.Add(this.gbxStats2, 0, 1);
+            this.tlpEntraceControls.Controls.Add(this.btnSave2, 0, 2);
+            this.tlpEntraceControls.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tlpEntraceControls.Location = new System.Drawing.Point(413, 3);
+            this.tlpEntraceControls.Name = "tlpEntraceControls";
+            this.tlpEntraceControls.RowCount = 4;
+            this.tlpEntraceControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.74449F));
+            this.tlpEntraceControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.46822F));
+            this.tlpEntraceControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.893643F));
+            this.tlpEntraceControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.893643F));
+            this.tlpEntraceControls.Size = new System.Drawing.Size(402, 637);
+            this.tlpEntraceControls.TabIndex = 9;
             // 
-            // groupBox1
+            // gbxEntrance
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gbxEntrance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox1.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 368);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Añadir Venta";
+            this.gbxEntrance.Controls.Add(this.tableLayoutPanel2);
+            this.gbxEntrance.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxEntrance.Location = new System.Drawing.Point(3, 3);
+            this.gbxEntrance.Name = "gbxEntrance";
+            this.gbxEntrance.Size = new System.Drawing.Size(396, 368);
+            this.gbxEntrance.TabIndex = 3;
+            this.gbxEntrance.TabStop = false;
+            this.gbxEntrance.Text = "Administrar Entrada";
             // 
             // tableLayoutPanel2
             // 
@@ -713,13 +711,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.numericUpDown1, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button3, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.button4, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnAdd2, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.btnGenGraph2, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.cbxMembers, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnDelete2, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.btnAddNotMember, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.chkIsMember, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblMemberType, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 26);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -732,99 +729,80 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 336);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // numericUpDown1
+            // btnAdd2
             // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnAdd2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown1.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(3, 91);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(382, 35);
-            this.numericUpDown1.TabIndex = 6;
+            this.btnAdd2.Enabled = false;
+            this.btnAdd2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd2.Location = new System.Drawing.Point(3, 101);
+            this.btnAdd2.Name = "btnAdd2";
+            this.btnAdd2.Size = new System.Drawing.Size(382, 45);
+            this.btnAdd2.TabIndex = 3;
+            this.btnAdd2.Text = "Añadir a la lista ";
+            this.btnAdd2.UseVisualStyleBackColor = true;
+            this.btnAdd2.Click += new System.EventHandler(this.btnAdd2_Click);
             // 
-            // button1
+            // btnGenGraph2
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnGenGraph2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 132);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(382, 45);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Añadir a la lista de Ventas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGenGraph2.Enabled = false;
+            this.btnGenGraph2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenGraph2.Location = new System.Drawing.Point(3, 256);
+            this.btnGenGraph2.Name = "btnGenGraph2";
+            this.btnGenGraph2.Size = new System.Drawing.Size(382, 77);
+            this.btnGenGraph2.TabIndex = 2;
+            this.btnGenGraph2.Text = "Generar Añalisis de ventas";
+            this.btnGenGraph2.UseVisualStyleBackColor = true;
+            this.btnGenGraph2.Click += new System.EventHandler(this.btnGenGraph2_Click);
             // 
-            // button2
+            // cbxMembers
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbxMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 287);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(382, 63);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Generar Añalisis de ventas";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cbxMembers.Enabled = false;
+            this.cbxMembers.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMembers.FormattingEnabled = true;
+            this.cbxMembers.Location = new System.Drawing.Point(3, 29);
+            this.cbxMembers.Name = "cbxMembers";
+            this.cbxMembers.Size = new System.Drawing.Size(382, 30);
+            this.cbxMembers.TabIndex = 4;
             // 
-            // comboBox1
+            // btnDelete2
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnDelete2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(382, 30);
-            this.comboBox1.TabIndex = 4;
+            this.btnDelete2.Enabled = false;
+            this.btnDelete2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete2.Location = new System.Drawing.Point(3, 204);
+            this.btnDelete2.Name = "btnDelete2";
+            this.btnDelete2.Size = new System.Drawing.Size(382, 46);
+            this.btnDelete2.TabIndex = 2;
+            this.btnDelete2.Text = "Eliminar una entrada";
+            this.btnDelete2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAddNotMember
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnAddNotMember.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(3, 235);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(382, 46);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Eliminar una venta";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(3, 183);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(382, 46);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Modificar una venta";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(382, 26);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Cantidad:";
+            this.btnAddNotMember.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNotMember.Location = new System.Drawing.Point(3, 152);
+            this.btnAddNotMember.Name = "btnAddNotMember";
+            this.btnAddNotMember.Size = new System.Drawing.Size(382, 46);
+            this.btnAddNotMember.TabIndex = 3;
+            this.btnAddNotMember.Text = "Añadir (No-Miembro)";
+            this.btnAddNotMember.UseVisualStyleBackColor = true;
+            this.btnAddNotMember.Click += new System.EventHandler(this.btnAddNotMember_Click);
             // 
             // lblMemberType
             // 
@@ -834,9 +812,9 @@
             this.lblMemberType.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemberType.Location = new System.Drawing.Point(3, 0);
             this.lblMemberType.Name = "lblMemberType";
-            this.lblMemberType.Size = new System.Drawing.Size(101, 26);
+            this.lblMemberType.Size = new System.Drawing.Size(99, 26);
             this.lblMemberType.TabIndex = 5;
-            this.lblMemberType.Text = "Producto:";
+            this.lblMemberType.Text = "Miembro:";
             // 
             // btnClear2
             // 
@@ -853,31 +831,31 @@
             this.btnClear2.UseVisualStyleBackColor = true;
             this.btnClear2.Click += new System.EventHandler(this.btnClear2_Click);
             // 
-            // groupBox2
+            // gbxStats2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gbxStats2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox2.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(3, 377);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(396, 181);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Estadísticas";
+            this.gbxStats2.Controls.Add(this.tableLayoutPanel3);
+            this.gbxStats2.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxStats2.Location = new System.Drawing.Point(3, 377);
+            this.gbxStats2.Name = "gbxStats2";
+            this.gbxStats2.Size = new System.Drawing.Size(396, 181);
+            this.gbxStats2.TabIndex = 7;
+            this.gbxStats2.TabStop = false;
+            this.gbxStats2.Text = "Estadísticas";
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBox3, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblEarnings2, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txtEarnings2, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblTotalTraffic, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtTotalTraffic, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblMemberPercent, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtMemberPercent, 1, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 29);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
@@ -887,91 +865,92 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(385, 155);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
-            // label4
+            // lblEarnings2
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblEarnings2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 53);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "P. más vendido:";
+            this.lblEarnings2.AutoSize = true;
+            this.lblEarnings2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEarnings2.Location = new System.Drawing.Point(3, 102);
+            this.lblEarnings2.Name = "lblEarnings2";
+            this.lblEarnings2.Size = new System.Drawing.Size(186, 53);
+            this.lblEarnings2.TabIndex = 5;
+            this.lblEarnings2.Text = "Ganancias";
             // 
-            // textBox1
+            // txtEarnings2
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtEarnings2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(195, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(187, 35);
-            this.textBox1.TabIndex = 6;
+            this.txtEarnings2.Location = new System.Drawing.Point(195, 105);
+            this.txtEarnings2.Name = "txtEarnings2";
+            this.txtEarnings2.ReadOnly = true;
+            this.txtEarnings2.Size = new System.Drawing.Size(187, 35);
+            this.txtEarnings2.TabIndex = 6;
             // 
-            // label5
+            // lblTotalTraffic
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblTotalTraffic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 51);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Total Vendido:";
+            this.lblTotalTraffic.AutoSize = true;
+            this.lblTotalTraffic.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTraffic.Location = new System.Drawing.Point(3, 0);
+            this.lblTotalTraffic.Name = "lblTotalTraffic";
+            this.lblTotalTraffic.Size = new System.Drawing.Size(186, 51);
+            this.lblTotalTraffic.TabIndex = 5;
+            this.lblTotalTraffic.Text = "Tráfico Total";
             // 
-            // textBox2
+            // txtTotalTraffic
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtTotalTraffic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(195, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(187, 35);
-            this.textBox2.TabIndex = 6;
+            this.txtTotalTraffic.Location = new System.Drawing.Point(195, 3);
+            this.txtTotalTraffic.Name = "txtTotalTraffic";
+            this.txtTotalTraffic.ReadOnly = true;
+            this.txtTotalTraffic.Size = new System.Drawing.Size(187, 35);
+            this.txtTotalTraffic.TabIndex = 6;
             // 
-            // label6
+            // lblMemberPercent
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblMemberPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(186, 51);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Uds. Vendidas:";
+            this.lblMemberPercent.AutoSize = true;
+            this.lblMemberPercent.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberPercent.Location = new System.Drawing.Point(3, 51);
+            this.lblMemberPercent.Name = "lblMemberPercent";
+            this.lblMemberPercent.Size = new System.Drawing.Size(186, 51);
+            this.lblMemberPercent.TabIndex = 5;
+            this.lblMemberPercent.Text = "% Miembros";
             // 
-            // textBox3
+            // txtMemberPercent
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtMemberPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(195, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(187, 35);
-            this.textBox3.TabIndex = 6;
+            this.txtMemberPercent.Location = new System.Drawing.Point(195, 54);
+            this.txtMemberPercent.Name = "txtMemberPercent";
+            this.txtMemberPercent.ReadOnly = true;
+            this.txtMemberPercent.Size = new System.Drawing.Size(187, 35);
+            this.txtMemberPercent.TabIndex = 6;
             // 
-            // button6
+            // btnSave2
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSave2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Enabled = false;
-            this.button6.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(3, 564);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(396, 31);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Guardar Récord";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSave2.Enabled = false;
+            this.btnSave2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave2.Location = new System.Drawing.Point(3, 564);
+            this.btnSave2.Name = "btnSave2";
+            this.btnSave2.Size = new System.Drawing.Size(396, 31);
+            this.btnSave2.TabIndex = 2;
+            this.btnSave2.Text = "Guardar Récord";
+            this.btnSave2.UseVisualStyleBackColor = true;
+            this.btnSave2.Click += new System.EventHandler(this.btnSave2_Click);
             // 
             // tlpGraphs2
             // 
@@ -1016,6 +995,18 @@
             this.tlpPplGraph1.Size = new System.Drawing.Size(516, 312);
             this.tlpPplGraph1.TabIndex = 0;
             // 
+            // chkIsMember
+            // 
+            this.chkIsMember.AutoSize = true;
+            this.chkIsMember.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsMember.Location = new System.Drawing.Point(3, 65);
+            this.chkIsMember.Name = "chkIsMember";
+            this.chkIsMember.Size = new System.Drawing.Size(142, 30);
+            this.chkIsMember.TabIndex = 0;
+            this.chkIsMember.Text = "Es miembro";
+            this.chkIsMember.UseVisualStyleBackColor = true;
+            this.chkIsMember.CheckedChanged += new System.EventHandler(this.chkIsMember_CheckedChanged);
+            // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1045,12 +1036,11 @@
             this.tbEntrance.ResumeLayout(false);
             this.tlpEntrance.ResumeLayout(false);
             this.tlpEntrance.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.tlpEntraceControls.ResumeLayout(false);
+            this.gbxEntrance.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
+            this.gbxStats2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tlpGraphs2.ResumeLayout(false);
@@ -1100,29 +1090,28 @@
         private System.Windows.Forms.ListBox lstEntrance;
         private System.Windows.Forms.DateTimePicker dtpEntranceDay;
         private System.Windows.Forms.Label lblPeopleList;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TableLayoutPanel tlpEntraceControls;
+        private System.Windows.Forms.GroupBox gbxEntrance;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAdd2;
+        private System.Windows.Forms.Button btnGenGraph2;
+        private System.Windows.Forms.ComboBox cbxMembers;
+        private System.Windows.Forms.Button btnDelete2;
+        private System.Windows.Forms.Button btnAddNotMember;
         private System.Windows.Forms.Label lblMemberType;
         private System.Windows.Forms.Button btnClear2;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbxStats2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label lblEarnings2;
+        private System.Windows.Forms.TextBox txtEarnings2;
+        private System.Windows.Forms.Label lblTotalTraffic;
+        private System.Windows.Forms.TextBox txtTotalTraffic;
+        private System.Windows.Forms.Label lblMemberPercent;
+        private System.Windows.Forms.TextBox txtMemberPercent;
+        private System.Windows.Forms.Button btnSave2;
         private System.Windows.Forms.TableLayoutPanel tlpGraphs2;
         private System.Windows.Forms.TableLayoutPanel tlpPplGraph2;
         private System.Windows.Forms.TableLayoutPanel tlpPplGraph1;
+        private System.Windows.Forms.CheckBox chkIsMember;
     }
 }
