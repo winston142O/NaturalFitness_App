@@ -219,6 +219,7 @@
     <None Include="Resources\add_white.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Data\" />
     <Folder Include="Entradas\" />
     <Folder Include="Ventas\" />
   </ItemGroup>

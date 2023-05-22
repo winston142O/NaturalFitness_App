@@ -42,7 +42,7 @@ namespace NaturalFitnessApp
 
         private void PopulateComboBox()
         {
-            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Winst\Documents\dbNF_Users.mdf;Integrated Security=True;Connect Timeout=30";
+            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\dbNF_Users.mdf;Integrated Security=True;Connect Timeout=30";
             string query = "SELECT pName FROM tbProducts";
 
             using (SqlConnection connection = new SqlConnection(con))
@@ -587,7 +587,7 @@ namespace NaturalFitnessApp
         
         private void populateComboBox2()
         {
-            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Winst\Documents\dbNF_Users.mdf;Integrated Security=True;Connect Timeout=30";
+            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\dbNF_Users.mdf;Integrated Security=True;Connect Timeout=30";
             string query = "SELECT nombres, apellidos FROM tbUsers";
 
             using (SqlConnection connection = new SqlConnection(con))

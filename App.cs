@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace NaturalFitnessApp
 {
@@ -15,6 +16,8 @@ namespace NaturalFitnessApp
         public App()
         {
             InitializeComponent();
+            string dataDirectory = Path.Combine(Application.StartupPath, "Data");
+            AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectory);
         }
 
         private Form activeForm = null;
