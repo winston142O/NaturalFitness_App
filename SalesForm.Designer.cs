@@ -58,16 +58,14 @@
             this.gbxAddSale = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.tlpGraphs = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpGraph1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpGraph2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpGraph1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpCafeteria = new System.Windows.Forms.TabPage();
             this.tbEntrance = new System.Windows.Forms.TabPage();
-            this.tlpEntrance = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDateEntrance = new System.Windows.Forms.Label();
-            this.lstEntrance = new System.Windows.Forms.ListBox();
-            this.dtpEntranceDay = new System.Windows.Forms.DateTimePicker();
-            this.lblPeopleList = new System.Windows.Forms.Label();
+            this.tlpGraphs2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpPplGraph2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpPplGraph1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpEntraceControls = new System.Windows.Forms.TableLayoutPanel();
             this.gbxEntrance = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -76,6 +74,7 @@
             this.cbxMembers = new System.Windows.Forms.ComboBox();
             this.btnDelete2 = new System.Windows.Forms.Button();
             this.btnAddNotMember = new System.Windows.Forms.Button();
+            this.chkIsMember = new System.Windows.Forms.CheckBox();
             this.lblMemberType = new System.Windows.Forms.Label();
             this.btnClear2 = new System.Windows.Forms.Button();
             this.gbxStats2 = new System.Windows.Forms.GroupBox();
@@ -87,10 +86,11 @@
             this.lblMemberPercent = new System.Windows.Forms.Label();
             this.txtMemberPercent = new System.Windows.Forms.TextBox();
             this.btnSave2 = new System.Windows.Forms.Button();
-            this.tlpGraphs2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpPplGraph2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpPplGraph1 = new System.Windows.Forms.TableLayoutPanel();
-            this.chkIsMember = new System.Windows.Forms.CheckBox();
+            this.tlpEntrance = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDateEntrance = new System.Windows.Forms.Label();
+            this.lstEntrance = new System.Windows.Forms.ListBox();
+            this.dtpEntranceDay = new System.Windows.Forms.DateTimePicker();
+            this.lblPeopleList = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudProdQty)).BeginInit();
             this.gbxStats.SuspendLayout();
             this.tlpStats.SuspendLayout();
@@ -103,13 +103,13 @@
             this.tabControl1.SuspendLayout();
             this.tpCafeteria.SuspendLayout();
             this.tbEntrance.SuspendLayout();
-            this.tlpEntrance.SuspendLayout();
+            this.tlpGraphs2.SuspendLayout();
             this.tlpEntraceControls.SuspendLayout();
             this.gbxEntrance.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.gbxStats2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tlpGraphs2.SuspendLayout();
+            this.tlpEntrance.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpSaleDay
@@ -536,20 +536,6 @@
             this.tlpGraphs.Size = new System.Drawing.Size(531, 637);
             this.tlpGraphs.TabIndex = 9;
             // 
-            // tlpGraph1
-            // 
-            this.tlpGraph1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpGraph1.ColumnCount = 1;
-            this.tlpGraph1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpGraph1.Location = new System.Drawing.Point(3, 3);
-            this.tlpGraph1.Name = "tlpGraph1";
-            this.tlpGraph1.RowCount = 1;
-            this.tlpGraph1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpGraph1.Size = new System.Drawing.Size(525, 312);
-            this.tlpGraph1.TabIndex = 0;
-            // 
             // tlpGraph2
             // 
             this.tlpGraph2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -563,6 +549,20 @@
             this.tlpGraph2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpGraph2.Size = new System.Drawing.Size(525, 313);
             this.tlpGraph2.TabIndex = 0;
+            // 
+            // tlpGraph1
+            // 
+            this.tlpGraph1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpGraph1.ColumnCount = 1;
+            this.tlpGraph1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpGraph1.Location = new System.Drawing.Point(3, 3);
+            this.tlpGraph1.Name = "tlpGraph1";
+            this.tlpGraph1.RowCount = 1;
+            this.tlpGraph1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpGraph1.Size = new System.Drawing.Size(525, 312);
+            this.tlpGraph1.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -601,75 +601,48 @@
             this.tbEntrance.Text = "Entrada de personas";
             this.tbEntrance.UseVisualStyleBackColor = true;
             // 
-            // tlpEntrance
+            // tlpGraphs2
             // 
-            this.tlpEntrance.ColumnCount = 1;
-            this.tlpEntrance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpEntrance.Controls.Add(this.lblDateEntrance, 0, 0);
-            this.tlpEntrance.Controls.Add(this.lstEntrance, 0, 3);
-            this.tlpEntrance.Controls.Add(this.dtpEntranceDay, 0, 1);
-            this.tlpEntrance.Controls.Add(this.lblPeopleList, 0, 2);
-            this.tlpEntrance.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tlpEntrance.Location = new System.Drawing.Point(3, 3);
-            this.tlpEntrance.Name = "tlpEntrance";
-            this.tlpEntrance.RowCount = 4;
-            this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEntrance.Size = new System.Drawing.Size(410, 637);
-            this.tlpEntrance.TabIndex = 0;
+            this.tlpGraphs2.ColumnCount = 1;
+            this.tlpGraphs2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpGraphs2.Controls.Add(this.tlpPplGraph2, 0, 1);
+            this.tlpGraphs2.Controls.Add(this.tlpPplGraph1, 0, 0);
+            this.tlpGraphs2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpGraphs2.Location = new System.Drawing.Point(815, 3);
+            this.tlpGraphs2.Name = "tlpGraphs2";
+            this.tlpGraphs2.RowCount = 2;
+            this.tlpGraphs2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpGraphs2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpGraphs2.Size = new System.Drawing.Size(522, 637);
+            this.tlpGraphs2.TabIndex = 10;
             // 
-            // lblDateEntrance
+            // tlpPplGraph2
             // 
-            this.lblDateEntrance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tlpPplGraph2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDateEntrance.AutoSize = true;
-            this.lblDateEntrance.Font = new System.Drawing.Font("Yu Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateEntrance.Location = new System.Drawing.Point(3, 0);
-            this.lblDateEntrance.Name = "lblDateEntrance";
-            this.lblDateEntrance.Size = new System.Drawing.Size(404, 26);
-            this.lblDateEntrance.TabIndex = 4;
-            this.lblDateEntrance.Text = "Fecha:";
+            this.tlpPplGraph2.ColumnCount = 1;
+            this.tlpPplGraph2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPplGraph2.Location = new System.Drawing.Point(3, 321);
+            this.tlpPplGraph2.Name = "tlpPplGraph2";
+            this.tlpPplGraph2.RowCount = 1;
+            this.tlpPplGraph2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPplGraph2.Size = new System.Drawing.Size(516, 313);
+            this.tlpPplGraph2.TabIndex = 0;
             // 
-            // lstEntrance
+            // tlpPplGraph1
             // 
-            this.lstEntrance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tlpPplGraph1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstEntrance.FormattingEnabled = true;
-            this.lstEntrance.ItemHeight = 16;
-            this.lstEntrance.Location = new System.Drawing.Point(3, 93);
-            this.lstEntrance.Name = "lstEntrance";
-            this.lstEntrance.Size = new System.Drawing.Size(404, 532);
-            this.lstEntrance.TabIndex = 5;
-            // 
-            // dtpEntranceDay
-            // 
-            this.dtpEntranceDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpEntranceDay.CalendarFont = new System.Drawing.Font("Myanmar Text", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEntranceDay.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEntranceDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEntranceDay.Location = new System.Drawing.Point(3, 29);
-            this.dtpEntranceDay.Name = "dtpEntranceDay";
-            this.dtpEntranceDay.Size = new System.Drawing.Size(404, 32);
-            this.dtpEntranceDay.TabIndex = 3;
-            // 
-            // lblPeopleList
-            // 
-            this.lblPeopleList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPeopleList.AutoSize = true;
-            this.lblPeopleList.Font = new System.Drawing.Font("Yu Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeopleList.Location = new System.Drawing.Point(3, 64);
-            this.lblPeopleList.Name = "lblPeopleList";
-            this.lblPeopleList.Size = new System.Drawing.Size(404, 26);
-            this.lblPeopleList.TabIndex = 6;
-            this.lblPeopleList.Text = "Listado de entrada:";
+            this.tlpPplGraph1.ColumnCount = 1;
+            this.tlpPplGraph1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPplGraph1.Location = new System.Drawing.Point(3, 3);
+            this.tlpPplGraph1.Name = "tlpPplGraph1";
+            this.tlpPplGraph1.RowCount = 1;
+            this.tlpPplGraph1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPplGraph1.Size = new System.Drawing.Size(516, 312);
+            this.tlpPplGraph1.TabIndex = 0;
             // 
             // tlpEntraceControls
             // 
@@ -803,6 +776,18 @@
             this.btnAddNotMember.Text = "Añadir (No-Miembro)";
             this.btnAddNotMember.UseVisualStyleBackColor = true;
             this.btnAddNotMember.Click += new System.EventHandler(this.btnAddNotMember_Click);
+            // 
+            // chkIsMember
+            // 
+            this.chkIsMember.AutoSize = true;
+            this.chkIsMember.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsMember.Location = new System.Drawing.Point(3, 65);
+            this.chkIsMember.Name = "chkIsMember";
+            this.chkIsMember.Size = new System.Drawing.Size(142, 30);
+            this.chkIsMember.TabIndex = 0;
+            this.chkIsMember.Text = "Es miembro";
+            this.chkIsMember.UseVisualStyleBackColor = true;
+            this.chkIsMember.CheckedChanged += new System.EventHandler(this.chkIsMember_CheckedChanged);
             // 
             // lblMemberType
             // 
@@ -952,60 +937,75 @@
             this.btnSave2.UseVisualStyleBackColor = true;
             this.btnSave2.Click += new System.EventHandler(this.btnSave2_Click);
             // 
-            // tlpGraphs2
+            // tlpEntrance
             // 
-            this.tlpGraphs2.ColumnCount = 1;
-            this.tlpGraphs2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpGraphs2.Controls.Add(this.tlpPplGraph2, 0, 1);
-            this.tlpGraphs2.Controls.Add(this.tlpPplGraph1, 0, 0);
-            this.tlpGraphs2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpGraphs2.Location = new System.Drawing.Point(815, 3);
-            this.tlpGraphs2.Name = "tlpGraphs2";
-            this.tlpGraphs2.RowCount = 2;
-            this.tlpGraphs2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpGraphs2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpGraphs2.Size = new System.Drawing.Size(522, 637);
-            this.tlpGraphs2.TabIndex = 10;
+            this.tlpEntrance.ColumnCount = 1;
+            this.tlpEntrance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpEntrance.Controls.Add(this.lblDateEntrance, 0, 0);
+            this.tlpEntrance.Controls.Add(this.lstEntrance, 0, 3);
+            this.tlpEntrance.Controls.Add(this.dtpEntranceDay, 0, 1);
+            this.tlpEntrance.Controls.Add(this.lblPeopleList, 0, 2);
+            this.tlpEntrance.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tlpEntrance.Location = new System.Drawing.Point(3, 3);
+            this.tlpEntrance.Name = "tlpEntrance";
+            this.tlpEntrance.RowCount = 4;
+            this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpEntrance.Size = new System.Drawing.Size(410, 637);
+            this.tlpEntrance.TabIndex = 0;
             // 
-            // tlpPplGraph2
+            // lblDateEntrance
             // 
-            this.tlpPplGraph2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblDateEntrance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpPplGraph2.ColumnCount = 1;
-            this.tlpPplGraph2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPplGraph2.Location = new System.Drawing.Point(3, 321);
-            this.tlpPplGraph2.Name = "tlpPplGraph2";
-            this.tlpPplGraph2.RowCount = 1;
-            this.tlpPplGraph2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPplGraph2.Size = new System.Drawing.Size(516, 313);
-            this.tlpPplGraph2.TabIndex = 0;
+            this.lblDateEntrance.AutoSize = true;
+            this.lblDateEntrance.Font = new System.Drawing.Font("Yu Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateEntrance.Location = new System.Drawing.Point(3, 0);
+            this.lblDateEntrance.Name = "lblDateEntrance";
+            this.lblDateEntrance.Size = new System.Drawing.Size(404, 26);
+            this.lblDateEntrance.TabIndex = 4;
+            this.lblDateEntrance.Text = "Fecha:";
             // 
-            // tlpPplGraph1
+            // lstEntrance
             // 
-            this.tlpPplGraph1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lstEntrance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpPplGraph1.ColumnCount = 1;
-            this.tlpPplGraph1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPplGraph1.Location = new System.Drawing.Point(3, 3);
-            this.tlpPplGraph1.Name = "tlpPplGraph1";
-            this.tlpPplGraph1.RowCount = 1;
-            this.tlpPplGraph1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPplGraph1.Size = new System.Drawing.Size(516, 312);
-            this.tlpPplGraph1.TabIndex = 0;
+            this.lstEntrance.FormattingEnabled = true;
+            this.lstEntrance.ItemHeight = 16;
+            this.lstEntrance.Location = new System.Drawing.Point(3, 93);
+            this.lstEntrance.Name = "lstEntrance";
+            this.lstEntrance.Size = new System.Drawing.Size(404, 532);
+            this.lstEntrance.TabIndex = 5;
             // 
-            // chkIsMember
+            // dtpEntranceDay
             // 
-            this.chkIsMember.AutoSize = true;
-            this.chkIsMember.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkIsMember.Location = new System.Drawing.Point(3, 65);
-            this.chkIsMember.Name = "chkIsMember";
-            this.chkIsMember.Size = new System.Drawing.Size(142, 30);
-            this.chkIsMember.TabIndex = 0;
-            this.chkIsMember.Text = "Es miembro";
-            this.chkIsMember.UseVisualStyleBackColor = true;
-            this.chkIsMember.CheckedChanged += new System.EventHandler(this.chkIsMember_CheckedChanged);
+            this.dtpEntranceDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpEntranceDay.CalendarFont = new System.Drawing.Font("Myanmar Text", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEntranceDay.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEntranceDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEntranceDay.Location = new System.Drawing.Point(3, 29);
+            this.dtpEntranceDay.Name = "dtpEntranceDay";
+            this.dtpEntranceDay.Size = new System.Drawing.Size(404, 32);
+            this.dtpEntranceDay.TabIndex = 3;
+            // 
+            // lblPeopleList
+            // 
+            this.lblPeopleList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPeopleList.AutoSize = true;
+            this.lblPeopleList.Font = new System.Drawing.Font("Yu Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeopleList.Location = new System.Drawing.Point(3, 64);
+            this.lblPeopleList.Name = "lblPeopleList";
+            this.lblPeopleList.Size = new System.Drawing.Size(404, 26);
+            this.lblPeopleList.TabIndex = 6;
+            this.lblPeopleList.Text = "Listado de entrada:";
             // 
             // SalesForm
             // 
@@ -1034,8 +1034,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tpCafeteria.ResumeLayout(false);
             this.tbEntrance.ResumeLayout(false);
-            this.tlpEntrance.ResumeLayout(false);
-            this.tlpEntrance.PerformLayout();
+            this.tlpGraphs2.ResumeLayout(false);
             this.tlpEntraceControls.ResumeLayout(false);
             this.gbxEntrance.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1043,7 +1042,8 @@
             this.gbxStats2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.tlpGraphs2.ResumeLayout(false);
+            this.tlpEntrance.ResumeLayout(false);
+            this.tlpEntrance.PerformLayout();
             this.ResumeLayout(false);
 
         }
