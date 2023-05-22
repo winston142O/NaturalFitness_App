@@ -69,7 +69,7 @@ namespace NaturalFitnessApp
         }
         private decimal GetItemPriceFromDatabase(string productName)
         {
-            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Winst\Documents\dbNF_Users.mdf;Integrated Security=True;Connect Timeout=30";
+            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\dbNF_Users.mdf;Integrated Security=True;Connect Timeout=30";
             string query = "SELECT pPrice FROM tbProducts WHERE pName = @ProductName";
 
             using (SqlConnection connection = new SqlConnection(con))
