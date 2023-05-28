@@ -18,6 +18,7 @@ namespace NaturalFitnessApp
             InitializeComponent();
             string dataDirectory = Path.Combine(Application.StartupPath, "Data");
             AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectory);
+            openChildForm(new HomePage());
         }
 
         private Form activeForm = null;
@@ -52,6 +53,11 @@ namespace NaturalFitnessApp
         private void btnFinance_Click(object sender, EventArgs e)
         {
             openChildForm(new SalesForm());
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HomePage());
         }
     }
 }
