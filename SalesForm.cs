@@ -505,7 +505,7 @@ namespace NaturalFitnessApp
 
                     using (var package = new ExcelPackage())
                     {
-                        var salesUnitsWorksheet = package.Workbook.Worksheets.Add("Sales in Units");
+                        var salesUnitsWorksheet = package.Workbook.Worksheets.Add("Ventas en Unidades");
 
                         List<int> salesData = ExtractQuantityData();
                         List<string> productNames = ExtractProductNames();
@@ -519,7 +519,7 @@ namespace NaturalFitnessApp
                             salesUnitsWorksheet.Cells[i + 2, 2].Value = salesData[i];
                         }
 
-                        var salesRevenueWorksheet = package.Workbook.Worksheets.Add("Sales in Revenue");
+                        var salesRevenueWorksheet = package.Workbook.Worksheets.Add("Ventas en Ganancias");
 
                         List<decimal> revenueData = ExtractRevenueData();
 

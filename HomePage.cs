@@ -35,9 +35,9 @@ namespace NaturalFitnessApp
 
         private void setLastDaySales()
         {
-            string ventasFolderPath = Path.Combine(Application.StartupPath, "Ventas");
-            string[] subfolders = Directory.GetDirectories(ventasFolderPath);
-            string latestSubfolder = subfolders.OrderByDescending(f => f).FirstOrDefault();
+            string ventasFolderPath = Path.Combine(Application.StartupPath, "Ventas"); // folder path
+            string[] subfolders = Directory.GetDirectories(ventasFolderPath); // get subfolders
+            string latestSubfolder = subfolders.OrderByDescending(f => f).FirstOrDefault(); // order by name (day)
 
             if (latestSubfolder != null)
             {
@@ -53,9 +53,9 @@ namespace NaturalFitnessApp
 
         private void setLastDayEntry()
         {
-            string ventasFolderPath = Path.Combine(Application.StartupPath, "Entradas");
-            string[] subfolders = Directory.GetDirectories(ventasFolderPath);
-            string latestSubfolder = subfolders.OrderByDescending(f => f).FirstOrDefault();
+            string ventasFolderPath = Path.Combine(Application.StartupPath, "Entradas"); // folder path
+            string[] subfolders = Directory.GetDirectories(ventasFolderPath); // get subfolders
+            string latestSubfolder = subfolders.OrderByDescending(f => f).FirstOrDefault(); // order by name (day)
 
             if (latestSubfolder != null)
             {
@@ -73,12 +73,12 @@ namespace NaturalFitnessApp
         {
             decimal totalIncome = 0;
 
-            string folderPath = Path.Combine(Application.StartupPath, "Ventas");
-            string[] subfolders = Directory.GetDirectories(folderPath);
+            string folderPath = Path.Combine(Application.StartupPath, "Ventas"); // folder path
+            string[] subfolders = Directory.GetDirectories(folderPath); // get subfolders
 
             foreach (string subfolder in subfolders)
             {
-                string[] salesFiles = Directory.GetFiles(subfolder, "Ventas_*.xlsx");
+                string[] salesFiles = Directory.GetFiles(subfolder, "Ventas_*.xlsx"); // get excel file
 
                 foreach (string file in salesFiles)
                 {

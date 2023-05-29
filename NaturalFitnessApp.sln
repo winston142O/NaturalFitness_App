@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaturalFitnessApp", "NaturalFitnessApp.csproj", "{4C903774-0C9A-45B8-9C20-D4EDD9672CF8}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup\Setup.vdproj", "{C9651AE7-E503-426E-BBE5-90A3A647BB55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{4C903774-0C9A-45B8-9C20-D4EDD9672CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C903774-0C9A-45B8-9C20-D4EDD9672CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C903774-0C9A-45B8-9C20-D4EDD9672CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9651AE7-E503-426E-BBE5-90A3A647BB55}.Debug|Any CPU.ActiveCfg = Debug
+		{C9651AE7-E503-426E-BBE5-90A3A647BB55}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
