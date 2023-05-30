@@ -48,10 +48,12 @@
             this.lblUnitsSold = new System.Windows.Forms.Label();
             this.txtUnitsSold = new System.Windows.Forms.TextBox();
             this.panelBottomBar = new System.Windows.Forms.Panel();
+            this.panelLogoSales = new System.Windows.Forms.Panel();
             this.lblManageSales = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.tlpDailySales = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAddSale = new System.Windows.Forms.TableLayoutPanel();
+            this.btnGenSales = new System.Windows.Forms.Button();
             this.tlpSalesControl = new System.Windows.Forms.TableLayoutPanel();
             this.gbxAddSale = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -89,8 +91,6 @@
             this.lstEntrance = new System.Windows.Forms.ListBox();
             this.dtpEntranceDay = new System.Windows.Forms.DateTimePicker();
             this.lblPeopleList = new System.Windows.Forms.Label();
-            this.btnGenSales = new System.Windows.Forms.Button();
-            this.panelLogoSales = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.nudProdQty)).BeginInit();
             this.gbxStats.SuspendLayout();
             this.tlpStats.SuspendLayout();
@@ -121,7 +121,7 @@
             this.dtpSaleDay.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpSaleDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpSaleDay.Location = new System.Drawing.Point(2, 23);
-            this.dtpSaleDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpSaleDay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpSaleDay.Name = "dtpSaleDay";
             this.dtpSaleDay.Size = new System.Drawing.Size(302, 27);
             this.dtpSaleDay.TabIndex = 0;
@@ -133,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstOrder.FormattingEnabled = true;
             this.lstOrder.Location = new System.Drawing.Point(2, 75);
-            this.lstOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstOrder.Margin = new System.Windows.Forms.Padding(2);
             this.lstOrder.Name = "lstOrder";
             this.lstOrder.Size = new System.Drawing.Size(302, 459);
             this.lstOrder.TabIndex = 2;
@@ -173,7 +173,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(2, 107);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(288, 33);
             this.btnAdd.TabIndex = 3;
@@ -189,7 +189,7 @@
             this.btnModify.Enabled = false;
             this.btnModify.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.Location = new System.Drawing.Point(2, 144);
-            this.btnModify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(288, 31);
             this.btnModify.TabIndex = 3;
@@ -205,7 +205,7 @@
             this.btnDelete.Enabled = false;
             this.btnDelete.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(2, 179);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(288, 30);
             this.btnDelete.TabIndex = 2;
@@ -220,7 +220,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudProdQty.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudProdQty.Location = new System.Drawing.Point(2, 74);
-            this.nudProdQty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudProdQty.Margin = new System.Windows.Forms.Padding(2);
             this.nudProdQty.Name = "nudProdQty";
             this.nudProdQty.Size = new System.Drawing.Size(288, 29);
             this.nudProdQty.TabIndex = 6;
@@ -260,7 +260,7 @@
             this.cbxProduct.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxProduct.FormattingEnabled = true;
             this.cbxProduct.Location = new System.Drawing.Point(2, 23);
-            this.cbxProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxProduct.Margin = new System.Windows.Forms.Padding(2);
             this.cbxProduct.Name = "cbxProduct";
             this.cbxProduct.Size = new System.Drawing.Size(288, 26);
             this.cbxProduct.TabIndex = 4;
@@ -273,9 +273,9 @@
             this.gbxStats.Controls.Add(this.tlpStats);
             this.gbxStats.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxStats.Location = new System.Drawing.Point(2, 305);
-            this.gbxStats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxStats.Margin = new System.Windows.Forms.Padding(2);
             this.gbxStats.Name = "gbxStats";
-            this.gbxStats.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxStats.Padding = new System.Windows.Forms.Padding(2);
             this.gbxStats.Size = new System.Drawing.Size(298, 148);
             this.gbxStats.TabIndex = 7;
             this.gbxStats.TabStop = false;
@@ -293,7 +293,7 @@
             this.tlpStats.Controls.Add(this.lblUnitsSold, 0, 1);
             this.tlpStats.Controls.Add(this.txtUnitsSold, 1, 1);
             this.tlpStats.Location = new System.Drawing.Point(4, 24);
-            this.tlpStats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpStats.Margin = new System.Windows.Forms.Padding(2);
             this.tlpStats.Name = "tlpStats";
             this.tlpStats.RowCount = 3;
             this.tlpStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -322,7 +322,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMostSold.Location = new System.Drawing.Point(146, 85);
-            this.txtMostSold.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMostSold.Margin = new System.Windows.Forms.Padding(2);
             this.txtMostSold.Name = "txtMostSold";
             this.txtMostSold.ReadOnly = true;
             this.txtMostSold.Size = new System.Drawing.Size(141, 29);
@@ -348,7 +348,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotal.Location = new System.Drawing.Point(146, 2);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(141, 29);
@@ -374,7 +374,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUnitsSold.Location = new System.Drawing.Point(146, 43);
-            this.txtUnitsSold.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUnitsSold.Margin = new System.Windows.Forms.Padding(2);
             this.txtUnitsSold.Name = "txtUnitsSold";
             this.txtUnitsSold.ReadOnly = true;
             this.txtUnitsSold.Size = new System.Drawing.Size(141, 29);
@@ -388,10 +388,20 @@
             this.panelBottomBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottomBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelBottomBar.Location = new System.Drawing.Point(0, 546);
-            this.panelBottomBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBottomBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottomBar.Name = "panelBottomBar";
             this.panelBottomBar.Size = new System.Drawing.Size(1011, 42);
             this.panelBottomBar.TabIndex = 6;
+            // 
+            // panelLogoSales
+            // 
+            this.panelLogoSales.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.finance_white;
+            this.panelLogoSales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLogoSales.Location = new System.Drawing.Point(344, 3);
+            this.panelLogoSales.Margin = new System.Windows.Forms.Padding(2);
+            this.panelLogoSales.Name = "panelLogoSales";
+            this.panelLogoSales.Size = new System.Drawing.Size(41, 37);
+            this.panelLogoSales.TabIndex = 2;
             // 
             // lblManageSales
             // 
@@ -414,7 +424,7 @@
             this.btnClear.Enabled = false;
             this.btnClear.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(2, 487);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(298, 27);
             this.btnClear.TabIndex = 4;
@@ -432,7 +442,7 @@
             this.tlpDailySales.Controls.Add(this.lblOrder, 0, 2);
             this.tlpDailySales.Dock = System.Windows.Forms.DockStyle.Left;
             this.tlpDailySales.Location = new System.Drawing.Point(2, 2);
-            this.tlpDailySales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpDailySales.Margin = new System.Windows.Forms.Padding(2);
             this.tlpDailySales.Name = "tlpDailySales";
             this.tlpDailySales.RowCount = 4;
             this.tlpDailySales.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -459,7 +469,7 @@
             this.tlpAddSale.Controls.Add(this.lblQty, 0, 2);
             this.tlpAddSale.Controls.Add(this.lblProduct, 0, 0);
             this.tlpAddSale.Location = new System.Drawing.Point(2, 21);
-            this.tlpAddSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAddSale.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddSale.Name = "tlpAddSale";
             this.tlpAddSale.RowCount = 8;
             this.tlpAddSale.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -473,6 +483,22 @@
             this.tlpAddSale.Size = new System.Drawing.Size(292, 273);
             this.tlpAddSale.TabIndex = 0;
             // 
+            // btnGenSales
+            // 
+            this.btnGenSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenSales.Enabled = false;
+            this.btnGenSales.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenSales.Location = new System.Drawing.Point(2, 213);
+            this.btnGenSales.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenSales.Name = "btnGenSales";
+            this.btnGenSales.Size = new System.Drawing.Size(288, 58);
+            this.btnGenSales.TabIndex = 2;
+            this.btnGenSales.Text = "Generar Añalisis de ventas";
+            this.btnGenSales.UseVisualStyleBackColor = true;
+            this.btnGenSales.Click += new System.EventHandler(this.btnGenSales_Click);
+            // 
             // tlpSalesControl
             // 
             this.tlpSalesControl.ColumnCount = 1;
@@ -483,7 +509,7 @@
             this.tlpSalesControl.Controls.Add(this.btnSave, 0, 2);
             this.tlpSalesControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.tlpSalesControl.Location = new System.Drawing.Point(303, 2);
-            this.tlpSalesControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSalesControl.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSalesControl.Name = "tlpSalesControl";
             this.tlpSalesControl.RowCount = 4;
             this.tlpSalesControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.74449F));
@@ -501,9 +527,9 @@
             this.gbxAddSale.Controls.Add(this.tlpAddSale);
             this.gbxAddSale.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxAddSale.Location = new System.Drawing.Point(2, 2);
-            this.gbxAddSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAddSale.Margin = new System.Windows.Forms.Padding(2);
             this.gbxAddSale.Name = "gbxAddSale";
-            this.gbxAddSale.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAddSale.Padding = new System.Windows.Forms.Padding(2);
             this.gbxAddSale.Size = new System.Drawing.Size(298, 299);
             this.gbxAddSale.TabIndex = 3;
             this.gbxAddSale.TabStop = false;
@@ -517,7 +543,7 @@
             this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(2, 457);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(298, 26);
             this.btnSave.TabIndex = 2;
@@ -533,7 +559,7 @@
             this.tlpGraphs.Controls.Add(this.tlpGraph1, 0, 0);
             this.tlpGraphs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpGraphs.Location = new System.Drawing.Point(605, 2);
-            this.tlpGraphs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpGraphs.Margin = new System.Windows.Forms.Padding(2);
             this.tlpGraphs.Name = "tlpGraphs";
             this.tlpGraphs.RowCount = 2;
             this.tlpGraphs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -549,7 +575,7 @@
             this.tlpGraph2.ColumnCount = 1;
             this.tlpGraph2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpGraph2.Location = new System.Drawing.Point(2, 260);
-            this.tlpGraph2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpGraph2.Margin = new System.Windows.Forms.Padding(2);
             this.tlpGraph2.Name = "tlpGraph2";
             this.tlpGraph2.RowCount = 1;
             this.tlpGraph2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -564,7 +590,7 @@
             this.tlpGraph1.ColumnCount = 1;
             this.tlpGraph1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpGraph1.Location = new System.Drawing.Point(2, 2);
-            this.tlpGraph1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpGraph1.Margin = new System.Windows.Forms.Padding(2);
             this.tlpGraph1.Name = "tlpGraph1";
             this.tlpGraph1.RowCount = 1;
             this.tlpGraph1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -577,7 +603,7 @@
             this.tabControl1.Controls.Add(this.tbEntrance);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1011, 546);
@@ -589,9 +615,9 @@
             this.tpCafeteria.Controls.Add(this.tlpSalesControl);
             this.tpCafeteria.Controls.Add(this.tlpDailySales);
             this.tpCafeteria.Location = new System.Drawing.Point(4, 22);
-            this.tpCafeteria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpCafeteria.Margin = new System.Windows.Forms.Padding(2);
             this.tpCafeteria.Name = "tpCafeteria";
-            this.tpCafeteria.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpCafeteria.Padding = new System.Windows.Forms.Padding(2);
             this.tpCafeteria.Size = new System.Drawing.Size(1003, 520);
             this.tpCafeteria.TabIndex = 0;
             this.tpCafeteria.Text = "Cafetería";
@@ -603,9 +629,9 @@
             this.tbEntrance.Controls.Add(this.tlpEntraceControls);
             this.tbEntrance.Controls.Add(this.tlpEntrance);
             this.tbEntrance.Location = new System.Drawing.Point(4, 22);
-            this.tbEntrance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEntrance.Margin = new System.Windows.Forms.Padding(2);
             this.tbEntrance.Name = "tbEntrance";
-            this.tbEntrance.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEntrance.Padding = new System.Windows.Forms.Padding(2);
             this.tbEntrance.Size = new System.Drawing.Size(1003, 520);
             this.tbEntrance.TabIndex = 1;
             this.tbEntrance.Text = "Entrada de personas";
@@ -619,7 +645,7 @@
             this.tlpGraphs2.Controls.Add(this.tlpPplGraph1, 0, 0);
             this.tlpGraphs2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpGraphs2.Location = new System.Drawing.Point(612, 2);
-            this.tlpGraphs2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpGraphs2.Margin = new System.Windows.Forms.Padding(2);
             this.tlpGraphs2.Name = "tlpGraphs2";
             this.tlpGraphs2.RowCount = 2;
             this.tlpGraphs2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -635,7 +661,7 @@
             this.tlpPplGraph2.ColumnCount = 1;
             this.tlpPplGraph2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpPplGraph2.Location = new System.Drawing.Point(2, 260);
-            this.tlpPplGraph2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPplGraph2.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPplGraph2.Name = "tlpPplGraph2";
             this.tlpPplGraph2.RowCount = 1;
             this.tlpPplGraph2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -650,7 +676,7 @@
             this.tlpPplGraph1.ColumnCount = 1;
             this.tlpPplGraph1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpPplGraph1.Location = new System.Drawing.Point(2, 2);
-            this.tlpPplGraph1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPplGraph1.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPplGraph1.Name = "tlpPplGraph1";
             this.tlpPplGraph1.RowCount = 1;
             this.tlpPplGraph1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -667,7 +693,7 @@
             this.tlpEntraceControls.Controls.Add(this.btnSave2, 0, 2);
             this.tlpEntraceControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.tlpEntraceControls.Location = new System.Drawing.Point(310, 2);
-            this.tlpEntraceControls.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpEntraceControls.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEntraceControls.Name = "tlpEntraceControls";
             this.tlpEntraceControls.RowCount = 4;
             this.tlpEntraceControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.74449F));
@@ -685,9 +711,9 @@
             this.gbxEntrance.Controls.Add(this.tableLayoutPanel2);
             this.gbxEntrance.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxEntrance.Location = new System.Drawing.Point(2, 2);
-            this.gbxEntrance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxEntrance.Margin = new System.Windows.Forms.Padding(2);
             this.gbxEntrance.Name = "gbxEntrance";
-            this.gbxEntrance.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxEntrance.Padding = new System.Windows.Forms.Padding(2);
             this.gbxEntrance.Size = new System.Drawing.Size(298, 299);
             this.gbxEntrance.TabIndex = 3;
             this.gbxEntrance.TabStop = false;
@@ -708,7 +734,7 @@
             this.tableLayoutPanel2.Controls.Add(this.chkIsMember, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblMemberType, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 21);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -731,7 +757,7 @@
             this.btnAdd2.Enabled = false;
             this.btnAdd2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd2.Location = new System.Drawing.Point(2, 82);
-            this.btnAdd2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd2.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd2.Name = "btnAdd2";
             this.btnAdd2.Size = new System.Drawing.Size(288, 37);
             this.btnAdd2.TabIndex = 3;
@@ -747,7 +773,7 @@
             this.btnGenGraph2.Enabled = false;
             this.btnGenGraph2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenGraph2.Location = new System.Drawing.Point(2, 205);
-            this.btnGenGraph2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenGraph2.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenGraph2.Name = "btnGenGraph2";
             this.btnGenGraph2.Size = new System.Drawing.Size(288, 74);
             this.btnGenGraph2.TabIndex = 2;
@@ -764,7 +790,7 @@
             this.cbxMembers.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMembers.FormattingEnabled = true;
             this.cbxMembers.Location = new System.Drawing.Point(2, 23);
-            this.cbxMembers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxMembers.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMembers.Name = "cbxMembers";
             this.cbxMembers.Size = new System.Drawing.Size(288, 26);
             this.cbxMembers.TabIndex = 4;
@@ -777,7 +803,7 @@
             this.btnDelete2.Enabled = false;
             this.btnDelete2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete2.Location = new System.Drawing.Point(2, 164);
-            this.btnDelete2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete2.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.Size = new System.Drawing.Size(288, 37);
             this.btnDelete2.TabIndex = 2;
@@ -791,7 +817,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddNotMember.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNotMember.Location = new System.Drawing.Point(2, 123);
-            this.btnAddNotMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddNotMember.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddNotMember.Name = "btnAddNotMember";
             this.btnAddNotMember.Size = new System.Drawing.Size(288, 37);
             this.btnAddNotMember.TabIndex = 3;
@@ -804,7 +830,7 @@
             this.chkIsMember.AutoSize = true;
             this.chkIsMember.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIsMember.Location = new System.Drawing.Point(2, 53);
-            this.chkIsMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkIsMember.Margin = new System.Windows.Forms.Padding(2);
             this.chkIsMember.Name = "chkIsMember";
             this.chkIsMember.Size = new System.Drawing.Size(117, 25);
             this.chkIsMember.TabIndex = 0;
@@ -833,7 +859,7 @@
             this.btnClear2.Enabled = false;
             this.btnClear2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear2.Location = new System.Drawing.Point(2, 487);
-            this.btnClear2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear2.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear2.Name = "btnClear2";
             this.btnClear2.Size = new System.Drawing.Size(298, 27);
             this.btnClear2.TabIndex = 4;
@@ -849,9 +875,9 @@
             this.gbxStats2.Controls.Add(this.tableLayoutPanel3);
             this.gbxStats2.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxStats2.Location = new System.Drawing.Point(2, 305);
-            this.gbxStats2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxStats2.Margin = new System.Windows.Forms.Padding(2);
             this.gbxStats2.Name = "gbxStats2";
-            this.gbxStats2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxStats2.Padding = new System.Windows.Forms.Padding(2);
             this.gbxStats2.Size = new System.Drawing.Size(298, 148);
             this.gbxStats2.TabIndex = 7;
             this.gbxStats2.TabStop = false;
@@ -869,7 +895,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblMemberPercent, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtMemberPercent, 1, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 24);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -898,7 +924,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEarnings2.Location = new System.Drawing.Point(146, 85);
-            this.txtEarnings2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEarnings2.Margin = new System.Windows.Forms.Padding(2);
             this.txtEarnings2.Name = "txtEarnings2";
             this.txtEarnings2.ReadOnly = true;
             this.txtEarnings2.Size = new System.Drawing.Size(141, 29);
@@ -924,7 +950,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotalTraffic.Location = new System.Drawing.Point(146, 2);
-            this.txtTotalTraffic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalTraffic.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalTraffic.Name = "txtTotalTraffic";
             this.txtTotalTraffic.ReadOnly = true;
             this.txtTotalTraffic.Size = new System.Drawing.Size(141, 29);
@@ -950,7 +976,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMemberPercent.Location = new System.Drawing.Point(146, 43);
-            this.txtMemberPercent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMemberPercent.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberPercent.Name = "txtMemberPercent";
             this.txtMemberPercent.ReadOnly = true;
             this.txtMemberPercent.Size = new System.Drawing.Size(141, 29);
@@ -964,7 +990,7 @@
             this.btnSave2.Enabled = false;
             this.btnSave2.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave2.Location = new System.Drawing.Point(2, 457);
-            this.btnSave2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave2.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave2.Name = "btnSave2";
             this.btnSave2.Size = new System.Drawing.Size(298, 26);
             this.btnSave2.TabIndex = 2;
@@ -982,7 +1008,7 @@
             this.tlpEntrance.Controls.Add(this.lblPeopleList, 0, 2);
             this.tlpEntrance.Dock = System.Windows.Forms.DockStyle.Left;
             this.tlpEntrance.Location = new System.Drawing.Point(2, 2);
-            this.tlpEntrance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpEntrance.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEntrance.Name = "tlpEntrance";
             this.tlpEntrance.RowCount = 4;
             this.tlpEntrance.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1013,7 +1039,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstEntrance.FormattingEnabled = true;
             this.lstEntrance.Location = new System.Drawing.Point(2, 75);
-            this.lstEntrance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstEntrance.Margin = new System.Windows.Forms.Padding(2);
             this.lstEntrance.Name = "lstEntrance";
             this.lstEntrance.Size = new System.Drawing.Size(304, 446);
             this.lstEntrance.TabIndex = 5;
@@ -1027,7 +1053,7 @@
             this.dtpEntranceDay.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEntranceDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEntranceDay.Location = new System.Drawing.Point(2, 23);
-            this.dtpEntranceDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEntranceDay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEntranceDay.Name = "dtpEntranceDay";
             this.dtpEntranceDay.Size = new System.Drawing.Size(304, 27);
             this.dtpEntranceDay.TabIndex = 3;
@@ -1046,32 +1072,6 @@
             this.lblPeopleList.TabIndex = 6;
             this.lblPeopleList.Text = "Listado de entrada:";
             // 
-            // btnGenSales
-            // 
-            this.btnGenSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenSales.Enabled = false;
-            this.btnGenSales.Font = new System.Drawing.Font("Yu Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenSales.Location = new System.Drawing.Point(2, 213);
-            this.btnGenSales.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGenSales.Name = "btnGenSales";
-            this.btnGenSales.Size = new System.Drawing.Size(288, 58);
-            this.btnGenSales.TabIndex = 2;
-            this.btnGenSales.Text = "Generar Añalisis de ventas";
-            this.btnGenSales.UseVisualStyleBackColor = true;
-            this.btnGenSales.Click += new System.EventHandler(this.btnGenSales_Click);
-            // 
-            // panelLogoSales
-            // 
-            this.panelLogoSales.BackgroundImage = global::NaturalFitnessApp.Properties.Resources.finance_white;
-            this.panelLogoSales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelLogoSales.Location = new System.Drawing.Point(344, 3);
-            this.panelLogoSales.Margin = new System.Windows.Forms.Padding(2);
-            this.panelLogoSales.Name = "panelLogoSales";
-            this.panelLogoSales.Size = new System.Drawing.Size(41, 37);
-            this.panelLogoSales.TabIndex = 2;
-            // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1080,7 +1080,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panelBottomBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalesForm";
             this.Text = "SalesForm";
             this.Load += new System.EventHandler(this.SalesForm_Load);

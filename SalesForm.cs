@@ -497,7 +497,7 @@ namespace NaturalFitnessApp
             {
                 DateTime saleDate = dtpSaleDay.Value;
 
-                string folderPath = Path.Combine(Application.StartupPath, "Ventas", saleDate.ToString("yyyy-MM-dd"));
+                string folderPath = Path.Combine(Application.StartupPath, "Registros", "Ventas", saleDate.ToString("yyyy-MM-dd"));
 
                 try
                 {
@@ -1065,7 +1065,7 @@ namespace NaturalFitnessApp
             {
                 DateTime saleDate = dtpEntranceDay.Value;
 
-                string folderPath = Path.Combine(Application.StartupPath, "Entradas", saleDate.ToString("yyyy-MM-dd"));
+                string folderPath = Path.Combine(Application.StartupPath, "Registros", "Entradas", saleDate.ToString("yyyy-MM-dd"));
 
                 try
                 {

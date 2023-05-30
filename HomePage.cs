@@ -35,7 +35,7 @@ namespace NaturalFitnessApp
 
         private void setLastDaySales()
         {
-            string ventasFolderPath = Path.Combine(Application.StartupPath, "Ventas"); // folder path
+            string ventasFolderPath = Path.Combine(Application.StartupPath, "Registros", "Ventas"); // folder path
             string[] subfolders = Directory.GetDirectories(ventasFolderPath); // get subfolders
             string latestSubfolder = subfolders.OrderByDescending(f => f).FirstOrDefault(); // order by name (day)
 
@@ -53,7 +53,7 @@ namespace NaturalFitnessApp
 
         private void setLastDayEntry()
         {
-            string ventasFolderPath = Path.Combine(Application.StartupPath, "Entradas"); // folder path
+            string ventasFolderPath = Path.Combine(Application.StartupPath, "Registros", "Entradas"); // folder path
             string[] subfolders = Directory.GetDirectories(ventasFolderPath); // get subfolders
             string latestSubfolder = subfolders.OrderByDescending(f => f).FirstOrDefault(); // order by name (day)
 
@@ -73,7 +73,7 @@ namespace NaturalFitnessApp
         {
             decimal totalIncome = 0;
 
-            string folderPath = Path.Combine(Application.StartupPath, "Ventas"); // folder path
+            string folderPath = Path.Combine(Application.StartupPath, "Registros", "Ventas"); // folder path
             string[] subfolders = Directory.GetDirectories(folderPath); // get subfolders
 
             foreach (string subfolder in subfolders)
@@ -108,7 +108,7 @@ namespace NaturalFitnessApp
         {
             int totalProductsSold = 0;
 
-            string folderPath = Path.Combine(Application.StartupPath, "Ventas");
+            string folderPath = Path.Combine(Application.StartupPath, "Registros","Ventas");
             string[] subfolders = Directory.GetDirectories(folderPath);
 
             foreach (string subfolder in subfolders)
@@ -143,7 +143,7 @@ namespace NaturalFitnessApp
         {
             int totalPeople = 0;
 
-            string folderPath = Path.Combine(Application.StartupPath, "Entradas");
+            string folderPath = Path.Combine(Application.StartupPath, "Registros", "Entradas");
             string[] subfolders = Directory.GetDirectories(folderPath);
 
             foreach (string subfolder in subfolders)
@@ -177,7 +177,7 @@ namespace NaturalFitnessApp
 
         private void UpdateSalesChart()
         {
-            string folderPath = Path.Combine(Application.StartupPath, "Ventas");
+            string folderPath = Path.Combine(Application.StartupPath, "Registros", "Ventas");
             string[] subfolders = Directory.GetDirectories(folderPath);
 
             // sort by newest date
@@ -258,7 +258,7 @@ namespace NaturalFitnessApp
 
         private void UpdateEntryChart()
         {
-            string folderPath = Path.Combine(Application.StartupPath, "Entradas");
+            string folderPath = Path.Combine(Application.StartupPath, "Registros", "Entradas");
             string[] subfolders = Directory.GetDirectories(folderPath);
 
             // sort by newest date
@@ -354,7 +354,7 @@ namespace NaturalFitnessApp
 
         private void btnFolder_Click(object sender, EventArgs e)
         {
-            string folderPath = Application.StartupPath;             
+            string folderPath = Path.Combine(Application.StartupPath, "Registros");
             Process.Start("explorer.exe", folderPath);
         }
     }
